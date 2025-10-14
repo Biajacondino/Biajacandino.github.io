@@ -51,7 +51,7 @@
 
     button {
       font-size: 100%;
-       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       padding: 2.5% 3%;
       cursor: pointer;
       background: #fff176;
@@ -73,26 +73,36 @@
       font-size: 100%;
     }
 
-    /* --- Integração visual do VLibras (Opção 3) --- */
+    /* --- Integração visual do VLibras (corrigido para não sobrepor o texto) --- */
     .fixo {
       position: relative !important;
-      margin: 40% auto;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 400px; /* espaço reservado para o intérprete */
     }
 
     [vw-access-button] {
-      position: static !important;
-      transform: scale(1.2);
-      margin-top: 10%;
+      position: relative !important;
+      transform: scale(1.1);
+      margin-bottom: 10px;
+      z-index: 2;
     }
 
     [vw-plugin-wrapper] {
-      position: static !important;
-      margin-top: 20%;
-      width: 100%;
+      position: relative !important;
+      width: 100% !important;
+      max-width: 350px;
+      height: 350px;
       display: flex;
       justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      z-index: 1;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
   </style>
 </head>
@@ -161,6 +171,7 @@
 
         botao.innerText = '✅ Fale novamente';
       };
+
       reconhecedor.onerror = (e) => {
         alert('Erro ao reconhecer a fala: ' + e.error);
         botao.innerText = 'Tente novamente';
