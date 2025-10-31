@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quem Somos?</title>
+  <style>
+    :root{
+      --blue:#0b63a6;
+      --blue-deep:#013a63;
+      --blue-light:#7fb3df;
+      --yellow:#ffbf00;
+      --yellow-pale:#fff3b0;
+      --bg:#f4fbff;
+      --card:#ffffff;
+      --radius:12px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#f7fbff,#f4fff6);color:var(--blue-deep);-webkit-font-smoothing:antialiased}
+
+    .container{max-width:1100px;margin:36px auto;padding:28px}
+    header{display:flex;align-items:center;gap:16px}
+    .brand{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--yellow));display:flex;align-items:center;justify-content:center;color:white;font-weight:900}
+    h1{margin:0;font-size:22px}
+    p.lead{margin:6px 0 18px;color:var(--blue-deep);opacity:.9;line-height:1.45}
+
+    .intro{background:linear-gradient(180deg,#ffffff,#f6fbff);padding:16px;border-radius:12px;box-shadow:0 8px 30px rgba(2,20,50,0.06);border:1px solid rgba(0,0,0,0.04)}
+
+    /* cards grid */
+    .team{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:16px;margin-top:18px;align-items:start
+    }
+
+    .card{background:var(--card);padding:16px;border-radius:12px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 8px 22px rgba(2,20,50,0.06);border:1px solid rgba(0,0,0,0.03)}
+    .avatar{width:94px;height:94px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:26px;color:white;margin-bottom:12px}
+    .avatar.bea{background:linear-gradient(135deg,var(--yellow),var(--blue))}
+    .avatar.bar{background:linear-gradient(135deg,var(--blue),var(--yellow))}
+    .avatar.fab{background:linear-gradient(135deg,var(--blue-light),var(--blue-deep))}
+    .avatar.liv{background:linear-gradient(135deg,var(--yellow-pale),var(--yellow));color:var(--blue-deep)}
+    .avatar.mar{background:linear-gradient(135deg,#ffd27a,var(--blue))}
+
+    .name{font-weight:800;margin:6px 0 4px}
+    .role{font-size:14px;color:var(--blue-deep);opacity:.9}
+    .bio{margin-top:10px;font-size:13px;color:var(--blue-deep);opacity:.85;line-height:1.4}
+
+    .actions{display:flex;gap:10px;justify-content:center;margin-top:22px}
+    .btn{background:var(--blue);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;border:none;cursor:pointer}
+    .btn.secondary{background:transparent;border:2px solid var(--blue);color:var(--blue)}
+
+    /* responsive */
+    @media (max-width:980px){
+      .team{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (max-width:640px){
+      .team{grid-template-columns:repeat(1,1fr)}
+      .avatar{width:84px;height:84px;font-size:22px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">Aa</div>
+      <div>
+        <h1>Quem é a equipe por trás do Librando?</h1>
+        <p class="lead">Somos a equipe desenvolvedora do Librando — uma iniciativa para tornar a comunicação mais acessível entre pessoas surdas e ouvintes através de transcrição automática e tradução para Libras. Conheça quem construiu este projeto com dedicação e foco em acessibilidade.</p>
+      </div>
+    </header>
+
+    <section class="intro" aria-labelledby="team-title">
+      <h2 id="team-title" style="margin:0 0 8px">Nossa missão</h2>
+      <p style="margin:0;color:var(--blue-deep);opacity:.9">Criar soluções inclusivas que facilitem a comunicação em ambientes educacionais e cotidianos, priorizando usabilidade, desempenho e respeito às necessidades das pessoas com deficiência auditiva.</p>
+    </section>
+
+    <section class="team" aria-label="Equipe Librando">
+      <article class="card" aria-labelledby="bea">
+        <div class="avatar bea">BJ</div>
+        <div class="name" id="bea">Beatriz Jacondino</div>
+        <div class="role">Desenvolviment &iv>
+        <p class="bio">Responsável pelo design de interface, protótipos e testes de usabilidade — garantindo que o Librando seja intuitivo e acolhedor.</p>
+      </article>
+
+      <article class="card" aria-labelledby="bar">
+        <div class="avatar bar">BF</div>
+        <div class="name" id="bar">Bárbara Franco</div>
+        <div class="role">Comunicação & Pesquisa</div>
+        <p class="bio">Cuida da pesquisa com usuários, conteúdo informativo e da comunicação externa do projeto, aproximando a solução de quem precisa.</p>
+      </article>
+
+      <article class="card" aria-labelledby="fab">
+        <div class="avatar fab">FR</div>
+        <div class="name" id="fab">Fábio Rodrigues</div>
+        <div class="role">Desenvolvimento & Integração</div>
+        <p class="bio">Desenvolvedor responsável pela implementação front-end e integração com APIs de transcrição e tradução.</p>
+      </article>
+
+      <article class="card" aria-labelledby="liv">
+        <div class="avatar liv">LO</div>
+        <div class="name" id="liv">Lívia Oliveira</div>
+        <div class="role">Acessibilidade & Inclusão</div>
+        <p class="bio">Especialista em acessibilidade, foca em garantir que cada recurso do Librando siga padrões e boas práticas inclusivas.</p>
+      </article>
+
+      <article class="card" aria-labelledby="mar">
+        <div class="avatar mar">MF</div>
+        <div class="name" id="mar">Marina Furtado</div>
+        <div class="role">Documentação & Suporte Técnico</div>
+        <p class="bio">Organiza a documentação do projeto e oferece suporte técnico para usuários e instituições parceiras.</p>
+      </article>
+    </section>
+
+    <div class="actions">
+      <a href="paginainiciall..html" class="btn">Voltar à página inicial</a>
+      <a href="#" class="btn secondary">Contato</a>
+    </div>
+  </div>
+</body>
+</html>

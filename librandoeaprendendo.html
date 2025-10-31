@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Librando e Aprendendo</title>
+  <style>
+    :root{
+      --blue:#0b63a6;
+      --blue-deep:#013a63;
+      --blue-light:#7fb3df;
+      --yellow:#ffbf00;
+      --yellow-pale:#fff3b0;
+      --bg:#f4fbff;
+      --card-bg: linear-gradient(180deg,#ffffff,#f6fbff);
+      --radius:10px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;padding:28px;background:var(--bg);color:var(--blue-deep);-webkit-font-smoothing:antialiased}
+
+    .wrap{max-width:1100px;margin:0 auto}
+    header{display:flex;align-items:center;gap:14px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--yellow));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800}
+    h1{margin:0;font-size:22px}
+    p.lead{margin:6px 0 18px;color:var(--blue-deep);opacity:.85}
+
+    /* tabela periódica-like */
+    .periodic{
+      display:grid;
+      grid-template-columns: repeat(13, 1fr);
+      gap:12px;
+      align-items:start;
+    }
+
+    /* cada célula */
+    .cell{
+      background:var(--card-bg);
+      border-radius:8px;
+      padding:10px;
+      min-height:84px;
+      display:flex;flex-direction:column;justify-content:center;align-items:center;
+      box-shadow:0 8px 22px rgba(2,20,50,0.06);
+      border:1px solid rgba(0,0,0,0.03);
+      position:relative;
+    }
+
+    .cell .num{position:absolute;left:8px;top:6px;font-size:12px;opacity:.8}
+    .cell .letter{font-size:34px;font-weight:900;line-height:1}
+    .cell .name{margin-top:6px;font-size:13px;opacity:.85}
+
+    /* blue / yellow styles */
+    .cell.blue{background:linear-gradient(180deg,var(--blue-light),var(--blue));color:white}
+    .cell.yellow{background:linear-gradient(180deg,var(--yellow-pale),var(--yellow));color:var(--blue-deep)}
+
+    /* larger hero cell for header (optional) */
+    .cell.header{
+      grid-column: span 13;display:flex;align-items:center;gap:12px;padding:14px 18px;min-height:56px
+    }
+    .subtitle{font-size:13px;color:var(--blue-deep);opacity:.8}
+
+    /* responsive */
+    @media (max-width:980px){
+      .periodic{grid-template-columns:repeat(9,1fr)}
+    }
+    @media (max-width:640px){
+      .periodic{grid-template-columns:repeat(6,1fr)}
+      .cell .letter{font-size:28px}
+    }
+
+    /* imitation of periodic gaps (for style) */
+    .gap{visibility:hidden}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">Aa</div>
+      <div>
+        <h1>Alfabeto em Libras </h1>
+        <p class="lead"></p>
+      </div>
+    </header>
+
+
+      <br>
+    <main>
+      <section class="periodic" aria-label="Alfabeto">
+      
+        
+        <div class="cell blue"><div class="num">A</div><div class="letter">A</div><div class="name">Abacaxi</div></div>
+        <div class="cell yellow"><div class="num">B</div><div class="letter">B</div><div class="name">Borboleta</div></div>
+        <div class="cell blue"><div class="num">C</div><div class="letter">C</div><div class="name">Cachorro</div></div>
+        <div class="cell yellow"><div class="num">D</div><div class="letter">D</div><div class="name">Dado</div></div>
+        <div class="cell blue"><div class="num">E</div><div class="letter">E</div><div class="name">Elefante</div></div>
+        <div class="cell yellow"><div class="num">F</div><div class="letter">F</div><div class="name">Flauta</div></div>
+        <div class="cell blue"><div class="num">G</div><div class="letter">G</div><div class="name">Gato</div></div>
+        <div class="cell yellow"><div class="num">H</div><div class="letter">H</div><div class="name">Helicóptero</div></div>
+        <div class="cell blue"><div class="num">I</div><div class="letter">I</div><div class="name">Igreja</div></div>
+        <div class="cell yellow"><div class="num">J</div><div class="letter">J</div><div class="name">Jacaré</div></div>
+        <div class="cell blue"><div class="num">K</div><div class="letter">K</div><div class="name">Ketchup</div></div>
+        <div class="cell yellow"><div class="num">L</div><div class="letter">L</div><div class="name">Livro</div></div>
+        <div class="cell blue"><div class="num">M</div><div class="letter">M</div><div class="name">Maçã</div></div>
+
+        
+        <div class="cell yellow"><div class="num">N</div><div class="letter">N</div><div class="name">Navio</div></div>
+        <div class="cell blue"><div class="num">O</div><div class="letter">O</div><div class="name">Ovelha</div></div>
+        <div class="cell yellow"><div class="num">P</div><div class="letter">P</div><div class="name">Pipa</div></div>
+        <div class="cell blue"><div class="num">Q</div><div class="letter">Q</div><div class="name">Queijo</div></div>
+        <div class="cell yellow"><div class="num">R</div><div class="letter">R</div><div class="name">Rato</div></div>
+        <div class="cell blue"><div class="num">S</div><div class="letter">S</div><div class="name">Sol</div></div>
+        <div class="cell yellow"><div class="num">T</div><div class="letter">T</div><div class="name">Trem</div></div>
+        <div class="cell blue"><div class="num">U</div><div class="letter">U</div><div class="name">Urso</div></div>
+        <div class="cell yellow"><div class="num">V</div><div class="letter">V</div><div class="name">Vela</div></div>
+        <div class="cell blue"><div class="num">W</div><div class="letter">W</div><div class="name">Water</div></div>
+        <div class="cell yellow"><div class="num">X</div><div class="letter">X</div><div class="name">Xícara</div></div>
+        <div class="cell blue"><div class="num">Y</div><div class="letter">Y</div><div class="name">Yakult</div></div>
+        <div class="cell yellow"><div class="num">Z</div><div class="letter">Z</div><div class="name">Zebra</div></div>
+
+      </section>
+    </main>
+
+  </div>
+</body>
+</html>
