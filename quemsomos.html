@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Quem Somos?</title>
   <style>
+     .highlight {
+    color: #ffffff; 
+    font-family: "Segoe UI", "Poppins", sans-serif; 
+    font-weight: 700; 
+    letter-spacing: 1px; 
+    }
     .title{
     text-align: center;
     color: #1125bd; 
@@ -111,8 +117,51 @@
       object-fit: cover;
       border: 4px solid #fff;
 }
+   header {
+      background-color: #1125bd;
+      color: white;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      justify-content: flex-start;
+    }
+
+    nav {
+    display: flex;
+    justify-content: flex-start; /* Alinha o menu à esquerda */
+    gap: 50px;
+    padding-left: 50px; /* Aumente ou diminua esse valor conforme desejar */
+    align-items: center;
+      }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      transition: 0.3s;
+      justify-content: flex-start
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      justify-content: flex-start
+    }
   </style>
 </head>
+<header>
+ <nav>
+  <a href="learning.html">
+    <img src="img/aprendendo.png" alt="Librando e Aprendendo" style="height: 40px;">
+  </a>
+  <a>
+    <img src="img/group (1).png" alt="Quem Somos" style="height: 40px;">
+  </a>
+  <h1>
+    <a href="https://librando.tec.br" target="_blank" class="highlight">Librando</a>
+  </h1>
+</nav>
+</header>
 <body>
   <div class="title">
   <h1> Sobre nós </h1>
@@ -122,14 +171,14 @@
       <h1>Quem é a equipe por trás do Librando?</h1>
         <p>Somos a equipe desenvolvedora do Librando — uma iniciativa para tornar a comunicação mais acessível entre pessoas surdas e ouvintes através de transcrição automática e tradução para Libras. Conheça quem construiu este projeto com dedicação e foco em acessibilidade.</p>
     </section>
-    <header>
       <br>
       <br>
       <div>
       <h2 id="team-title">Nossa missão</h2>
       <h3>Criar soluções inclusivas que facilitem a comunicação em ambientes educacionais e cotidianos, priorizando usabilidade, desempenho e respeito às necessidades das pessoas com deficiência auditiva.</h3>
       </div>
-    </header>
+      <br>
+
 
    <section class="team" aria-label="Equipe Librando"> 
   <article class="card" aria-labelledby="bia">
@@ -190,7 +239,7 @@
     </section>
 
     <div class="actions">
-      <a href="home">
+      <a href="https://librando.tec.br">
       <img src="img/home.png" alt="Tela inicial" style="height: 40px;">
     </a>
     </div>
