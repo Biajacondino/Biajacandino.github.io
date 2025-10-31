@@ -2,149 +2,163 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Librando</title>
-
-  <!-- Plugin VLibras hospedado oficialmente -->
+  <title>Fala para Libras</title>
   <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-
   <style>
     body {
-      background: #5e87f8;
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
       text-align: center;
-      padding: 1% 1% 1%;
-      color: white;
-    }
-
-    main {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 5%;
-      padding: 3%;
-    }
-
-    .coluna {
-      background: #f1ea86;
-      border-radius: 1%;
-      padding: 2%;
-      flex: 2 10 20%;
-      box-shadow: 0 4% 10% rgba(0, 0, 0, 0.2);
+      margin-top: 60px;
+      background-color: #ffffe4;
     }
 
     #texto {
-      width: 100%;
-      padding: 1%;
-      font-size: 100%;
+      width: 80%;
+      padding: 15px;
+      font-size: 20px;
+      margin: 20px auto;
       border: 2px solid #aaa;
-      border-radius: 2%;
-      background: white;
+      border-radius: 10px;
+      background: #f0f0f0;
       cursor: pointer;
-      min-height: 80px;
     }
 
     button {
-      font-size: 100%;
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      padding: 2.5% 3%;
+      font-size: 20px;
+      padding: 10px 30px;
       cursor: pointer;
-      background: #fff176;
-      border: none;
-      border-radius: 2%;
-      transition: 0.3s;
-      margin-top: 2%;
     }
-
-    button:hover {
-      background: #f7e23c;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1.5%;
+    /* ====== CABEÇALHO ====== */
+    header {
+      background-color: #0057a3;
       color: white;
-      margin-top: 3%;
-      font-size: 100%;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    /* --- Integração visual do VLibras (corrigido para não sobrepor o texto) --- */
-    .fixo {
-      position: relative !important;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 400px; /* espaço reservado para o intérprete */
+    nav {
+    display: flex;
+    justify-content: space-evenly; /* Alinha o menu à esquerda */
+    gap: 40px;
+    padding-left: 80px; /* Aumente ou diminua esse valor conforme desejar */
+      }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
     }
 
-    [vw-access-button] {
-      position: relative !important;
-      transform: scale(1.1);
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ====== SEÇÃO PRINCIPAL ====== */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #1125bd, #3f6cf5);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
       margin-bottom: 10px;
-      z-index: 2;
     }
 
-    [vw-plugin-wrapper] {
-      position: relative !important;
-      width: 100% !important;
-      max-width: 350px;
-      height: 350px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      z-index: 1;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ====== CONTEÚDO ====== */
+    .content {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .content h2 {
+      color: #0057a3;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+   
+    footer {
+      background-color: #0057a3;
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 50px;
+      font-size: 0.9rem;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+        justify-content: space-between;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+    
+    .highlight {
+    color: #FFD54F; 
+    font-family: "Segoe UI", "Poppins", sans-serif; 
+    font-weight: 700; 
+    letter-spacing: 1px; 
     }
   </style>
 </head>
+<header>
+    <nav>
+      <a href="librandoeaprendendo.html">Librando e Aprendendo</a>
+      <a href="quemsomos.html">Quem Somos?</a>
+    </nav>
+  </header>
 <body>
 
-  <header>
-    <h1>🎙️ Librando — Fale e veja em Libras</h1>
-  </header>
+  <h1>🎙️ Fale e veja em Libras</h1>
+  <button id="microfone">Ativar Microfone</button>
+  <div id="texto" tabindex="0">Clique no botão e fale...</div>
 
-  <main>
-    <div class="coluna">
-      <h2>🗣️ Sua fala</h2>
-      <button id="microfone">Ativar Microfone</button>
-      <div id="texto" tabindex="0">Clique no botão e fale...</div>
+  <!-- VLibras -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
     </div>
-
-    <div class="coluna">
-      <h2>🤟 Tradução em Libras</h2>
-      <!-- VLibras integrado visualmente -->
-      <div vw class="enabled fixo">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-          <div class="vw-plugin-top-wrapper"></div>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    © 2025 Librando — Projeto com integração de reconhecimento de voz e VLibras
-  </footer>
+  </div>
 
   <script>
-    // Inicializa o VLibras
-    document.addEventListener("DOMContentLoaded", function() {
-      new window.VLibras.Widget('https://vlibras.gov.br/app');
-    });
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
 
     const botao = document.getElementById('microfone');
     const divTexto = document.getElementById('texto');
 
-    // Verifica suporte ao reconhecimento de voz
+    function simularCliqueReal(elemento) {
+      const evento = new MouseEvent("click", {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      });
+      elemento.dispatchEvent(evento);
+    }
+
     if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
       alert('Seu navegador não suporta reconhecimento de voz. Use o Google Chrome.');
     } else {
@@ -161,13 +175,16 @@
         const texto = event.results[0][0].transcript;
         divTexto.textContent = texto;
 
-        // Foca e seleciona o texto para VLibras reagir automaticamente
+        // Seleciona texto e foca para VLibras reagir
         const range = document.createRange();
         range.selectNodeContents(divTexto);
         const sel = window.getSelection();
         sel.removeAllRanges();
         sel.addRange(range);
         divTexto.focus();
+
+        // Clique real simulado
+        simularCliqueReal(divTexto);
 
         botao.innerText = '✅ Fale novamente';
       };
@@ -178,5 +195,30 @@
       };
     }
   </script>
+  <section class="hero">
+<h1>Bem-vindo ao <span class="highlight"> Librando</span></h1>
+    <p>Uma plataforma acessível e inclusiva que conecta a fala ao mundo da Libras, facilitando a comunicação entre ouvintes e pessoas surdas.Uma plataforma que conecta as diferenças</p>
+  </section>
+
+  
+  <section class="content">
+    <h2><STRong>Nosso Propósito</STRong></h2>
+    <p>
+      O projeto <strong>Librando</strong> tem como principal objetivo promover a inclusão comunicacional por meio de uma
+      ferramenta capaz de transcrever o que é dito e traduzir automaticamente para a Língua Brasileira de Sinais (Libras),
+      além de oferecer uma gama de conteúdos que auxiliam na sua aprendizagem <del></del> Libras.
+      Desenvolvido como parte de um Trabalho de Conclusão de Curso (TCC), o sistema busca aproximar a tecnologia da acessibilidade
+      e fomentar o aprendizado de Libras entre diferentes públicos.
+    </p>
+  </section>
+
+  
+  <footer>
+    <nav>
+      <a href="librandoeaprendendo.html"><img src="" alt=""></a>
+      <a href="quemsomos.html">Quem Somos?</a>
+    </nav>
+    © 2025 Librando | Projeto TCC - ETEC Rosa Perrone Scavone
+  </footer>
 </body>
 </html>
