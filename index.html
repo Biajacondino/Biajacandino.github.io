@@ -36,24 +36,28 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      justify-content: flex-start;
     }
 
     nav {
     display: flex;
-    justify-content: space-evenly; /* Alinha o menu à esquerda */
-    gap: 40px;
-    padding-left: 80px; /* Aumente ou diminua esse valor conforme desejar */
+    justify-content: flex-start; /* Alinha o menu à esquerda */
+    gap: 50px;
+    padding-left: 50px; /* Aumente ou diminua esse valor conforme desejar */
+    align-items: center;
       }
 
     nav a {
       color: white;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 400;
       transition: 0.3s;
+      justify-content: flex-start
     }
 
     nav a:hover {
       text-decoration: underline;
+      justify-content: flex-start
     }
 
     /* ====== SEÇÃO PRINCIPAL ====== */
@@ -125,11 +129,17 @@
   </style>
 </head>
 <header>
-    <nav>
-      <a href="librandoeaprendendo.html"><img src="" alt=""></a>
-      <a href="quemsomos.html">Quem Somos?</a>
-    </nav>
-  </header>
+  <nav>
+    <a href="librandoeaprendendo.html">
+      <img src="img/aprendendo.png" alt="Librando e Aprendendo" style="height: 40px;">
+    </a>
+    <a href="quemsomos.html">
+      <img src="img/group.png" alt="Librando e Aprendendo" style="height: 40px;">
+    </a>
+    <a href=""></a>
+    <h1><span class="highlight"> Librando</span></h1>
+  </nav>
+</header>
 <body>
 
   <h1>🎙️ Fale e veja em Libras</h1>
