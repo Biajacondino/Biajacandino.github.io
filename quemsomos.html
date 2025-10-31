@@ -5,28 +5,65 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Quem Somos?</title>
   <style>
+    .title{
+    text-align: center;
+    color: #1125bd; 
+    font-family: "Segoe UI", "Poppins", sans-serif; 
+    font-weight: 1700; 
+    letter-spacing: 1px; 
+    padding: 15px 15px;
+    font-size: 19rem;
+    display:grid;
+    font-size:22px
+    }
+    p{
+      color: #ffffff;
+      line-height: 1.6;
+      font-size: 1.1rem;
+      font-size: 1.2rem;
+      max-width: 1000px;
+      margin: 25px auto;
+    }
+    h2{
+      color: #000000;
+    }
+    h3{
+      color: #000000;
+    }
     :root{
       --blue:#0b63a6;
-      --blue-deep:#013a63;
+      --blue-deep:#ffffff;
       --blue-light:#7fb3df;
       --yellow:#ffbf00;
       --yellow-pale:#fff3b0;
-      --bg:#f4fbff;
-      --card:#ffffff;
+      --bg:#1125bd;
+      --card:#1125bd;
       --radius:12px;
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     }
     *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,#f7fbff,#f4fff6);color:var(--blue-deep);-webkit-font-smoothing:antialiased}
+    body{
+      margin:0;background:linear-gradient(180deg,#ffffe4);
+      color:var(--blue-deep);
+      -webkit-font-smoothing:antialiased
+    }
 
     .container{max-width:1100px;margin:36px auto;padding:28px}
-    header{display:flex;align-items:center;gap:16px}
+    header{display:flex;align-items:center;gap:16px;}
     .brand{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--yellow));display:flex;align-items:center;justify-content:center;color:white;font-weight:900}
-    h1{margin:0;font-size:22px}
+    h1{
+      margin:0;
+    }
     p.lead{margin:6px 0 18px;color:var(--blue-deep);opacity:.9;line-height:1.45}
 
-    .intro{background:linear-gradient(180deg,#ffffff,#f6fbff);padding:16px;border-radius:12px;box-shadow:0 8px 30px rgba(2,20,50,0.06);border:1px solid rgba(0,0,0,0.04)}
-
+    .intro{
+      color: #ffbf00;
+      background:linear-gradient(180deg,#1125bd);
+      padding:16px;
+      border-radius:12px;
+      box-shadow:0 8px 30px rgba(2,20,50,0.06);
+      border:1px solid rgba(0,0,0,0.04)
+    }
     /* cards grid */
     .team{
       display:grid;
@@ -58,28 +95,40 @@
       .team{grid-template-columns:repeat(1,1fr)}
       .avatar{width:84px;height:84px;font-size:22px}
     }
+     footer {
+      background-color: #1125bd;
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 50px;
+      font-size: 0.9rem;
+      justify-content: space-between;
+    }
   </style>
 </head>
 <body>
+  <div class="title">
+  <h1> Sobre nós </h1>
+  </div>
   <div class="container">
+    <section class="intro" aria-labelledby="team-title">
+      <h1>Quem é a equipe por trás do Librando?</h1>
+        <p>Somos a equipe desenvolvedora do Librando — uma iniciativa para tornar a comunicação mais acessível entre pessoas surdas e ouvintes através de transcrição automática e tradução para Libras. Conheça quem construiu este projeto com dedicação e foco em acessibilidade.</p>
+    </section>
     <header>
-      <div class="brand">Aa</div>
+      <br>
+      <br>
       <div>
-        <h1>Quem é a equipe por trás do Librando?</h1>
-        <p class="lead">Somos a equipe desenvolvedora do Librando — uma iniciativa para tornar a comunicação mais acessível entre pessoas surdas e ouvintes através de transcrição automática e tradução para Libras. Conheça quem construiu este projeto com dedicação e foco em acessibilidade.</p>
+      <h2 id="team-title">Nossa missão</h2>
+      <h3>Criar soluções inclusivas que facilitem a comunicação em ambientes educacionais e cotidianos, priorizando usabilidade, desempenho e respeito às necessidades das pessoas com deficiência auditiva.</h3>
       </div>
     </header>
-
-    <section class="intro" aria-labelledby="team-title">
-      <h2 id="team-title" style="margin:0 0 8px">Nossa missão</h2>
-      <p style="margin:0;color:var(--blue-deep);opacity:.9">Criar soluções inclusivas que facilitem a comunicação em ambientes educacionais e cotidianos, priorizando usabilidade, desempenho e respeito às necessidades das pessoas com deficiência auditiva.</p>
-    </section>
 
     <section class="team" aria-label="Equipe Librando">
       <article class="card" aria-labelledby="bea">
         <div class="avatar bea">BJ</div>
         <div class="name" id="bea">Beatriz Jacondino</div>
-        <div class="role">Desenvolviment &iv>
+        <div class="role">Desenvolvimento </div>
         <p class="bio">Responsável pelo design de interface, protótipos e testes de usabilidade — garantindo que o Librando seja intuitivo e acolhedor.</p>
       </article>
 
@@ -113,9 +162,15 @@
     </section>
 
     <div class="actions">
-      <a href="paginainiciall..html" class="btn">Voltar à página inicial</a>
-      <a href="#" class="btn secondary">Contato</a>
+      <a href="index.html">
+      <img src="img/home.png" alt="Tela inicial" style="height: 40px;">
+    </a>
     </div>
   </div>
+  <footer>
+    Contato: barbara04franco@gmail.com <br> beatriz.jacondino@gmail.com 
+    <br>
+    © 2025 Librando | Projeto TCC - ETEC Rosa Perrone Scavone
+  </footer>
 </body>
 </html>
