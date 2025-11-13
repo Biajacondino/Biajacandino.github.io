@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Librando</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ESSENCIAL PARA RESPONSIVIDADE -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
   <style>
     body {
@@ -14,31 +14,55 @@
       padding: 0;
     }
 
-    /* ====== CABEÇALHO ====== */
-    header {
+    #texto {
+      width: 80%;
+      padding: 15px;
+      font-size: 20px;
+      margin: 20px auto;
+      border: 2px solid #aaa;
+      border-radius: 10px;
+      background: #f0f0f0;
+      cursor: pointer;
+      word-wrap: break-word;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 10px 30px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
       background-color: #1125bd;
       color: white;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #3f6cf5;
+    }
+
+   /* ====== CABEÇALHO ====== */
+header {
+    background-color: #1125bd;
+    color: white;
+    padding: 17px 0;
       position: sticky;
       top: 0;
       z-index: 1000;
-      width: 100%;
-    }
+      justify-content: flex-start;
+}
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 40px;
-      flex-wrap: wrap;
-    }
-
-    nav a img {
-      height: 40px;
-    }
-
+nav {
+   display: flex;
+    justify-content: flex-start; /* Alinha o menu à esquerda */
+    gap: 55px;
+    padding-left: 50px; /* Aumente ou diminua esse valor conforme desejar */
+    align-items: center;
+}
     nav a {
       color: white;
       text-decoration: none;
+      font-weight: 400;
       transition: 0.3s;
     }
 
@@ -46,19 +70,19 @@
       text-decoration: underline;
     }
 
+    nav img {
+      height: 40px;
+      width: auto;
+      vertical-align: middle;
+    }
+
     nav h1 {
-      margin: 0;
       font-size: 1.8rem;
+      margin: 0;
+      white-space: nowrap;
     }
 
-    .highlight {
-      color: #ffbf00;
-      font-family: "Segoe UI", "Poppins", sans-serif;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    /* ====== SEÇÃO HERO ====== */
+    /* ====== SEÇÃO PRINCIPAL ====== */
     .hero {
       text-align: center;
       padding: 80px 20px;
@@ -97,79 +121,56 @@
       font-size: 1.1rem;
     }
 
-    /* ====== BLOCO DE TEXTO E BOTÃO ====== */
-    #texto {
-      width: 80%;
-      padding: 15px;
-      font-size: 20px;
-      margin: 20px auto;
-      border: 2px solid #aaa;
-      border-radius: 10px;
-      background: #f0f0f0;
-      cursor: pointer;
-      word-wrap: break-word;
-    }
-
-    button {
-      font-size: 20px;
-      padding: 10px 30px;
-      cursor: pointer;
-      border-radius: 8px;
-      border: none;
-      background: #1125bd;
-      color: white;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background: #3f6cf5;
-    }
-
-    /* ====== RODAPÉ ====== */
     footer {
       background-color: #1125bd;
       color: white;
       text-align: center;
       padding: 30px 10px;
-      font-size: 0.9rem;
       margin-top: 50px;
+      font-size: 0.9rem;
+    }
+
+    .highlight {
+      color: #ffbf00;
+      font-family: "Segoe UI", "Poppins", sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
 
     /* ====== RESPONSIVIDADE ====== */
     @media (max-width: 900px) {
       nav {
-        justify-content: center;
-        gap: 20px;
-        padding: 15px;
+        gap: 25px;
+        padding: 10px 20px;
       }
-
-      nav h1 {
-        font-size: 1.5rem;
-      }
-
-      .hero {
-        padding: 60px 15px;
-      }
-
       .hero h1 {
-        font-size: 2rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-        padding: 0 10px;
+        font-size: 2.2rem;
       }
     }
 
     @media (max-width: 600px) {
       nav {
         flex-direction: column;
-        text-align: center;
+        align-items: flex-start;
         gap: 10px;
+        padding: 10px 20px;
       }
 
-      nav a img {
-        height: 35px;
+      nav h1 {
+        font-size: 1.5rem;
+        text-align: left;
+      }
+
+      .hero {
+        padding: 50px 15px;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
       }
 
       #texto {
@@ -178,58 +179,35 @@
       }
 
       button {
-        width: 80%;
+        width: 90%;
         font-size: 18px;
       }
 
-      .content h2 {
-        font-size: 1.5rem;
-      }
-
-      .content p {
-        font-size: 1rem;
+      .content {
+        padding: 40px 15px;
       }
     }
   </style>
 </head>
+
+<header>
+  <nav>
+    <a href="learning.html">
+      <img src="img/aprendendo.png" alt="Librando e Aprendendo">
+    </a>
+    <a href="quemsomos.html">
+      <img src="img/group.png" alt="Quem Somos">
+    </a>
+    <h1><span class="highlight">Librando</span></h1>
+  </nav>
+</header>
+
 <body>
-  <header>
-    <nav>
-      <a href="learning.html">
-        <img src="img/aprendendo.png" alt="Librando e Aprendendo">
-      </a>
-      <a href="quemsomos.html">
-        <img src="img/group.png" alt="Quem Somos">
-      </a>
-      <h1><span class="highlight">Librando</span></h1>
-    </nav>
-  </header>
-
-  <main>
-    <h1>🎙️ Fale e veja em Libras</h1>
-    <button id="microfone">Ativar Microfone</button>
-    <div id="texto" tabindex="0">Clique no botão e fale...</div>
-
-    <section class="hero">
-      <h1>Bem-vindo ao <span class="highlight">Librando</span></h1>
-      <p>Uma plataforma acessível e inclusiva que conecta a fala ao mundo da Libras, facilitando a comunicação entre ouvintes e pessoas surdas. Uma plataforma que conecta as diferenças.</p>
-    </section>
-
-    <section class="content">
-      <h2><strong>Nosso Propósito</strong></h2>
-      <p>
-        O projeto <strong>Librando</strong> tem como principal objetivo promover a inclusão comunicacional por meio de uma
-        ferramenta capaz de transcrever o que é dito e traduzir automaticamente para a Língua Brasileira de Sinais (Libras),
-        além de oferecer uma gama de conteúdos que auxiliam na sua aprendizagem.  
-        Desenvolvido como parte de um Trabalho de Conclusão de Curso (TCC), o sistema busca aproximar a tecnologia da acessibilidade
-        e fomentar o aprendizado de Libras entre diferentes públicos.
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    © 2025 Librando | Projeto TCC - ETEC Rosa Perrone Scavone
-  </footer>
+  <br>
+  <h1>🎙️ Fale e veja em Libras</h1>
+  <button id="microfone">Ativar Microfone</button>
+  <div id="texto" tabindex="0">Clique no botão e fale...</div>
+  <br><br>
 
   <!-- VLibras -->
   <div vw class="enabled">
@@ -246,7 +224,11 @@
     const divTexto = document.getElementById('texto');
 
     function simularCliqueReal(elemento) {
-      const evento = new MouseEvent("click", { bubbles: true, cancelable: true, view: window });
+      const evento = new MouseEvent("click", {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      });
       elemento.dispatchEvent(evento);
     }
 
@@ -283,5 +265,25 @@
       };
     }
   </script>
+
+  <section class="hero">
+    <h1>Bem-vindo ao <span class="highlight">Librando</span></h1>
+    <p>Uma plataforma acessível e inclusiva que conecta a fala ao mundo da Libras, facilitando a comunicação entre ouvintes e pessoas surdas. Uma plataforma que conecta as diferenças.</p>
+  </section>
+
+  <section class="content">
+    <h2><strong>Nosso Propósito</strong></h2>
+    <p>
+      O projeto <strong>Librando</strong> tem como principal objetivo promover a inclusão comunicacional por meio de uma
+      ferramenta capaz de transcrever o que é dito e traduzir automaticamente para a Língua Brasileira de Sinais (Libras),
+      além de oferecer uma gama de conteúdos que auxiliam na aprendizagem de Libras.
+      Desenvolvido como parte de um Trabalho de Conclusão de Curso (TCC), o sistema busca aproximar a tecnologia da acessibilidade
+      e fomentar o aprendizado de Libras entre diferentes públicos.
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Librando | Projeto TCC - ETEC Rosa Perrone Scavone
+  </footer>
 </body>
 </html>
