@@ -110,13 +110,17 @@
       font-size: 0.9rem;
       justify-content: space-between;
     }
-     .avatar img.foto-avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #fff;
+  /* Todas as imagens dos membros ficam redondas e padronizadas */
+.avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  display: block;
+  aspect-ratio: 1 / 1; /* força proporção quadrada */
 }
+
    header {
       background-color: #1125bd;
       color: white;
@@ -158,7 +162,7 @@
     <img src="img/group (1).png" alt="Quem Somos" style="height: 40px;">
   </a>
   <h1>
-    <a href="index.html" target="_blank" class="highlight">Librando</a>
+    <a href="index.html" class="highlight">Librando</a>
   </h1>
 </nav>
 </header>
@@ -173,13 +177,6 @@
     </section>
       <br>
       <br>
-      <div>
-      <h2 id="team-title">Nossa missão</h2>
-      <h3>Criar soluções inclusivas que facilitem a comunicação em ambientes educacionais e cotidianos, priorizando usabilidade, desempenho e respeito às necessidades das pessoas com deficiência auditiva.</h3>
-      </div>
-      <br>
-
-
    <section class="team" aria-label="Equipe Librando"> 
   <article class="card" aria-labelledby="bia">
     <div class="avatar bia">
@@ -237,7 +234,11 @@
 </article>
 
     </section>
-
+  <br>
+      <div>
+      <h2 id="team-title">Nossa missão</h2>
+      <h3>Criar soluções inclusivas que facilitem a comunicação em ambientes educacionais e cotidianos, priorizando usabilidade, desempenho e respeito às necessidades das pessoas com deficiência auditiva.</h3>
+      </div>
     <div class="actions">
       <a href="index.html">
       <img src="img/home.png" alt="Tela inicial" style="height: 40px;">
