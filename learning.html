@@ -77,6 +77,7 @@
       box-shadow:0 8px 22px rgba(2,20,50,0.06);
       border:1px solid rgba(0,0,0,0.03);
       position:relative;
+      transition: 0.5s;
     }
 
     .cell .num{position:absolute;left:8px;top:6px;font-size:12px;opacity:.8}
@@ -129,10 +130,29 @@
       transition: 0.3s;
       justify-content: flex-start
     }
-
+     td.p1, td.p1 {
+          display: inline-flex;
+          flex-direction: column;
+          border: 1px solid white;
+          width: 3em;
+          height: 3em;
+        }
     nav a:hover {
       text-decoration: underline;
       justify-content: flex-start
+    }
+
+    .cell:hover{
+      transform: scale(1.25);
+    }
+    footer {
+      background-color: #1125bd;
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 50px;
+      font-size: 0.9rem;
+      justify-content: space-between;
     }
   </style>
 </head>
@@ -151,8 +171,8 @@
 </header>
 <body>
   <div class="wrap">
-      <div class="logo">Aa</div>
       <div class="title">
+        <br>
         <h1>Alfabeto em Libras </h1>
         <p class="lead"></p>
       </div>
@@ -164,7 +184,7 @@
       <section class="periodic" aria-label="Alfabeto">
       
         
-        <div class="cell blue"><div class="num">A</div><div class="letter">A</div><div class="name">Abacaxi</div></div>
+        <td><div class="cell blue"><div class="num">A</div><div class="letter">A</div><div class="name">Abacaxi</div></div></td>
         <div class="cell yellow"><div class="num">B</div><div class="letter">B</div><div class="name">Borboleta</div></div>
         <div class="cell blue"><div class="num">C</div><div class="letter">C</div><div class="name">Cachorro</div></div>
         <div class="cell yellow"><div class="num">D</div><div class="letter">D</div><div class="name">Dado</div></div>
@@ -196,10 +216,19 @@
       </section>
     </main>
   </div>
+  <br>
+  <br>
+  <br>
   <div class="actions">
       <a href="index.html">
       <img src="img/home.png" alt="Tela inicial" style="height: 40px;">
     </a>
     </div>
 </body>
+<footer>
+    Contatos: <br> <br> beatriz.jacondino@gmail.com  | barbara04franco@gmail.com | fabio.rodriguessantos1974@gmail.com | liviaoliveira021007@gmail.com | marina.ftanaka@gmail.com
+    <br>
+    <br>
+    © 2025 Librando | Projeto TCC - ETEC Rosa Perrone Scavone
+  </footer>
 </html>
