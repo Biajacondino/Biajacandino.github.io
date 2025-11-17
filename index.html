@@ -34,7 +34,7 @@
       border-radius: 8px;
       background-color: #1125bd;
       color: white;
-      transition: background 0.3s;
+      transition: 0.3s;
     }
 
     button:hover {
@@ -42,46 +42,47 @@
     }
 
    /* ====== CABEÇALHO ====== */
-header {
-    background-color: #1125bd;
-    color: white;
-    padding: 17px 0;
+ header {
+      background-color: #1125bd;
+      color: white;
+      padding: 15px 0;
       position: sticky;
       top: 0;
       z-index: 1000;
       justify-content: flex-start;
-}
+    }
 
-nav {
-   display: flex;
+    nav {
+    display: flex;
     justify-content: flex-start; /* Alinha o menu à esquerda */
-    gap: 55px;
+    gap: 50px;
     padding-left: 50px; /* Aumente ou diminua esse valor conforme desejar */
     align-items: center;
-}
+      }
+
     nav a {
       color: white;
       text-decoration: none;
       font-weight: 400;
       transition: 0.3s;
+      justify-content: flex-start
     }
 
     nav a:hover {
       text-decoration: underline;
+      justify-content: flex-start
     }
 
-    nav img {
-      height: 40px;
-      width: auto;
-      vertical-align: middle;
-    }
+nav img {
+  height: 38px;
+}
 
-    nav h1 {
-      font-size: 1.8rem;
-      margin: 0;
-      white-space: nowrap;
-    }
-
+.logo-text {
+  font-size: 33px;
+  font-weight: 700;
+  color: #ffcc00; /* Amarelo do print */
+  margin: 0;
+}
     /* ====== SEÇÃO PRINCIPAL ====== */
     .hero {
       text-align: center;
@@ -138,67 +139,45 @@ nav {
     }
 
     /* ====== RESPONSIVIDADE ====== */
-    @media (max-width: 900px) {
-      nav {
-        gap: 25px;
-        padding: 10px 20px;
-      }
-      .hero h1 {
-        font-size: 2.2rem;
-      }
+   @media (max-width:980px){
+      .team{grid-template-columns:repeat(3,1fr)}
     }
-
-    @media (max-width: 600px) {
-       nav {
-    flex-direction: row; /* mantém os botões lado a lado */
-    justify-content: flex-start;
-    flex-wrap: wrap; /* permite quebrar linha apenas se faltar espaço */
-    gap: 25px;
-    padding: 10px 20px;
-  }
-
-  nav h1 {
-    font-size: 1.4rem;
-  }
-
-      .hero {
-        padding: 50px 15px;
-      }
-
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      #texto {
-        width: 90%;
-        font-size: 18px;
-      }
-
-      button {
-        width: 90%;
-        font-size: 18px;
-      }
-
-      .content {
-        padding: 40px 15px;
-      }
+    @media (max-width:640px){
+      .team{grid-template-columns:repeat(1,1fr)}
+      .avatar{width:84px;height:84px;font-size:22px}
     }
+     footer {
+      background-color: #1125bd;
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 50px;
+      font-size: 0.9rem;
+      justify-content: space-between;
+    }
+    .avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  display: block;
+  aspect-ratio: 1 / 1; /* força proporção quadrada */
+}
   </style>
 </head>
 
 <header>
   <nav>
     <a href="learning.html">
-      <img src="img/aprendendo.png" alt="Librando e Aprendendo">
+      <img src="img/aprendendo.png" alt="Página Inicial">
     </a>
+
     <a href="quemsomos.html">
       <img src="img/group.png" alt="Quem Somos">
     </a>
-    <h1><span class="highlight">Librando</span></h1>
+
+    <h1 class="logo-text">Librando</h1>
   </nav>
 </header>
 
