@@ -55,7 +55,7 @@
     .logo-text {
       font-size: 33px;
       font-weight: 700;
-      color: #ffcc00;
+      color: #ffffff;
       margin: 0;
       font-family: 'Segoe UI', "Poppins", sans-serif;
     }
@@ -70,7 +70,7 @@
       font-size: 23px;
     }
 
-    /* ===== GRID DO ALFABETO ===== */
+    /* ===== GRID PADRÃO ===== */
     .periodic{
       display:grid;
       grid-template-columns: repeat(13, 1fr);
@@ -78,6 +78,12 @@
       align-items:start;
       max-width:1100px;
       margin: 0 auto;
+    }
+
+    /* ===== GRID ESPECIAL NÚMEROS (CENTRALIZADA) ===== */
+    .periodic.numbers{
+      grid-template-columns: repeat(10, 1fr);
+      justify-content: center;
     }
 
     .cell{
@@ -103,6 +109,7 @@
     @media (max-width:980px){ .periodic{grid-template-columns:repeat(9,1fr)} }
     @media (max-width:640px){ 
       .periodic{grid-template-columns:repeat(6,1fr)} 
+      .periodic.numbers{grid-template-columns: repeat(5, 1fr);}
       .cell .letter{font-size:28px}
     }
 
@@ -115,6 +122,7 @@
       margin-top: 50px;
       font-size: 0.9rem;
     }
+    
 
   </style>
 </head>
@@ -122,14 +130,13 @@
 <header>
   <nav>
     <a href="learning.html">
-      <img src="img/aprendendo.png" alt="Librando e Aprendendo">
+      <img src="img/aprendendo (2).png" alt="Librando e Aprendendo">
     </a>
 
     <a href="quemsomos.html">
       <img src="img/group.png" alt="Quem Somos">
     </a>
-
-    <h1 class="logo-text">Librando</h1>
+<h1><a href="index.html" class="highlight">Librando</a></h1>
   </nav>
 </header>
 
@@ -143,6 +150,7 @@
   <main>
     <section class="periodic" aria-label="Alfabeto">
 
+      <!-- A - Z -->
       <div class="cell blue"><div class="num">A</div><div class="letter">A</div><div class="name">Abacaxi</div></div>
       <div class="cell yellow"><div class="num">B</div><div class="letter">B</div><div class="name">Borboleta</div></div>
       <div class="cell blue"><div class="num">C</div><div class="letter">C</div><div class="name">Cachorro</div></div>
@@ -173,15 +181,37 @@
     </section>
   </main>
 
-  <br><br><br>
-</body>
+  <br>
 
-<footer>
-  Contatos: <br><br>
-  beatriz.jacondino@gmail.com | barbara04franco@gmail.com | fabio.rodriguessantos1974@gmail.com |
-  liviaoliveira021007@gmail.com | marina.ftanaka@gmail.com
+  <div class="title">
+    <h1>Números em Libras</h1>
+  </div>
+
   <br><br>
-  © 2025 Librando | Projeto TCC - ETEC Rosa Perrone Scavone
-</footer>
 
+  <!-- NÚMEROS CENTRALIZADOS -->
+  <section class="periodic numbers" aria-label="Números">
+      <div class="cell blue"><div class="num">0</div><div class="letter">0</div></div>
+      <div class="cell yellow"><div class="num">1</div><div class="letter">1</div></div>
+      <div class="cell blue"><div class="num">2</div><div class="letter">2</div></div>
+      <div class="cell yellow"><div class="num">3</div><div class="letter">3</div></div>
+      <div class="cell blue"><div class="num">4</div><div class="letter">4</div></div>
+      <div class="cell yellow"><div class="num">5</div><div class="letter">5</div></div>
+      <div class="cell blue"><div class="num">6</div><div class="letter">6</div></div>
+      <div class="cell yellow"><div class="num">7</div><div class="letter">7</div></div>
+      <div class="cell blue"><div class="num">8</div><div class="letter">8</div></div>
+      <div class="cell yellow"><div class="num">9</div><div class="letter">9</div></div>
+  </section>
+
+  <br><br><br>
+
+  <footer>
+    Contatos: <br><br>
+    beatriz.jacondino@gmail.com | barbara04franco@gmail.com | fabio.rodriguessantos1974@gmail.com |
+    liviaoliveira021007@gmail.com | marina.ftanaka@gmail.com
+    <br><br>
+    © 2025 Librando | Projeto TCC - ETEC Rosa Perrone Scavone
+  </footer>
+
+</body>
 </html>
