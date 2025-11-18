@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <title>Librando</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -41,49 +41,47 @@
       background-color: #3f6cf5;
     }
 
-   /* ====== CABEÇALHO ====== */
- header {
+    /* ====== CABEÇALHO ====== */
+    header {
       background-color: #1125bd;
       color: white;
-      padding: 15px 0;
+      padding: 20px 0;
       position: sticky;
       top: 0;
       z-index: 1000;
-      justify-content: flex-start;
     }
 
     nav {
-    display: flex;
-    justify-content: flex-start; /* Alinha o menu à esquerda */
-    gap: 50px;
-    padding-left: 50px; /* Aumente ou diminua esse valor conforme desejar */
-    align-items: center;
-      }
+      display: flex;
+      justify-content: flex-start;
+      gap: 50px;
+      padding-left: 50px;
+      align-items: center;
+    }
 
     nav a {
       color: white;
       text-decoration: none;
       font-weight: 400;
       transition: 0.3s;
-      justify-content: flex-start
     }
 
     nav a:hover {
       text-decoration: underline;
-      justify-content: flex-start
     }
 
-nav img {
-  height: 38px;
-}
+    nav img {
+      height: 38px;
+    }
 
-.logo-text {
-  font-size: 33px;
-  font-weight: 700;
-  color: #ffcc00; /* Amarelo do print */
-  margin: 0;
-  font-family: 'Segoe UI', "Poppins" sans-serif;
-}
+    .logo-text {
+      font-size: 33px;
+      font-weight: 700;
+      color: #ffcc00;
+      margin: 0;
+      font-family: 'Segoe UI', "Poppins", sans-serif;
+    }
+
     /* ====== SEÇÃO PRINCIPAL ====== */
     .hero {
       text-align: center;
@@ -139,32 +137,21 @@ nav img {
       letter-spacing: 1px;
     }
 
-    /* ====== RESPONSIVIDADE ====== */
-   @media (max-width:980px){
-      .team{grid-template-columns:repeat(3,1fr)}
-    }
-    @media (max-width:640px){
-      .team{grid-template-columns:repeat(1,1fr)}
-      .avatar{width:84px;height:84px;font-size:22px}
-    }
-     footer {
-      background-color: #1125bd;
-      color: white;
-      text-align: center;
-      padding: 30px 0;
-      margin-top: 50px;
-      font-size: 0.9rem;
-      justify-content: space-between;
-    }
-    .avatar img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #fff;
-  display: block;
-  aspect-ratio: 1 / 1; /* força proporção quadrada */
+    /* ===== VLibras FIXO E REDUZIDO ===== */
+    /* ===== VLibras FIXO E REDUZIDO ===== */
+[vw] {
+  position: fixed !important;
+  bottom: 0.1px !important; /* menor valor = mais alto na tela */
+  right: 10px !important;
+  z-index: 999999 !important;
 }
+
+[vw-plugin-wrapper] {
+  transform: scale(0.72) !important;
+  transform-origin: bottom right !important;
+}
+
+
   </style>
 </head>
 
@@ -189,26 +176,32 @@ nav img {
   <div id="texto" tabindex="0">Clique no botão e fale...</div>
   <br><br>
 
-  <!-- VLibras -->
+  <!-- VLibras FIXO E REDUZIDO -->
   <div vw class="enabled">
-    <div vw-access-button class="active"></div>
-    <div vw-plugin-wrapper>
-      <div class="vw-plugin-top-wrapper"></div>
-    </div>
+      <div vw-access-button></div>
+      <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+      </div>
   </div>
 
+  <!-- Script VLibras ÚNICO -->
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
   <script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');
+
+    // Abre o VLibras automaticamente em modo reduzido
+    window.addEventListener("load", function () {
+      setTimeout(() => {
+        const botaoAcessibilidade = document.querySelector("[vw-access-button]");
+        if (botaoAcessibilidade) botaoAcessibilidade.click();
+      }, 1200);
+    });
 
     const botao = document.getElementById('microfone');
     const divTexto = document.getElementById('texto');
 
     function simularCliqueReal(elemento) {
-      const evento = new MouseEvent("click", {
-        bubbles: true,
-        cancelable: true,
-        view: window
-      });
+      const evento = new MouseEvent("click", { bubbles: true, cancelable: true, view: window });
       elemento.dispatchEvent(evento);
     }
 
@@ -263,9 +256,10 @@ nav img {
   </section>
 
   <footer>
-    Contatos: <br> <br> beatriz.jacondino@gmail.com  | barbara04franco@gmail.com | fabio.rodriguessantos1974@gmail.com | liviaoliveira021007@gmail.com | marina.ftanaka@gmail.com
-    <br>
-    <br>
+    Contatos: <br><br>
+    beatriz.jacondino@gmail.com | barbara04franco@gmail.com | fabio.rodriguessantos1974@gmail.com |
+    liviaoliveira021007@gmail.com | marina.ftanaka@gmail.com
+    <br><br>
     © 2025 Librando | Projeto TCC - ETEC Rosa Perrone Scavone
   </footer>
 </body>
