@@ -4,67 +4,39 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Librando e Aprendendo</title>
+
   <style>
-    .highlight {
-      color: #ffffff; 
-      font-family: "Segoe UI", "Poppins", sans-serif; 
-      font-weight: 700; 
-      letter-spacing: 1px; 
-    }
-    h1{
-      margin:0;
-    }
     :root{
-      --blue:#0b63a6;
-      --blue-deep:#013a63;
-      --blue-light:#7fb3df;
+      --blue:#1125bd;
       --yellow:#ffbf00;
-      --yellow-pale:#fff3b0;
-      --bg:#f4fbff;
-      --card-bg: linear-gradient(180deg,#ffffe4,#ffffe4);
+      --bg:#ffffe4;
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
     }
-    *{box-sizing:border-box}
-    .title{
-      text-align: center;
-      color: #1125bd; 
-      font-family: "Segoe UI", "Poppins", sans-serif; 
-      font-weight: 1700; 
-      letter-spacing: 1px; 
-      padding: 0px 7px;
-      display:grid;
-      font-size:23px
-    }
+
     body{
       margin:0;
       font-family: Arial, sans-serif;
       text-align: center;
-      background-color: #ffffe4;
-
+      background-color: var(--bg);
     }
 
-    .wrap{max-width:1100px;margin:0 auto}
-    
+    /* ===== HEADER PADRONIZADO ===== */
     header {
-      display:flex;
-      align-items:center;
-      gap:14px;
-      background-color: #1125bd;
+      background-color: var(--blue);
       color: white;
-      padding: 15px 0;
+      padding: 20px 0;
       position: sticky;
       top: 0;
       z-index: 1000;
-      justify-content: flex-start;
     }
 
     nav {
       display: flex;
       justify-content: flex-start;
-      gap: 32px;
-      padding-left: 32px;
+      gap: 50px;
+      padding-left: 50px;
       align-items: center;
-      flex-wrap: wrap; /* 🔥 permite quebrar linha no celular */
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -74,40 +46,42 @@
       transition: 0.3s;
     }
 
-    nav a:hover { text-decoration: underline }
+    nav a:hover { text-decoration: underline; }
 
-    /* responsivo cabeçalho */
-    @media (max-width: 640px) {
-      nav {
-        gap: 16px;
-        padding-left: 12px;
-      }
-
-      nav a img {
-        height: 32px;
-      }
-
-      nav h1 {
-        font-size: 18px;
-        flex-basis: 100%; /* força para linha de baixo */
-        text-align: left;
-        margin-top: 4px;
-      }
-
-      header {
-        padding: 10px 0;
-      }
+    nav img {
+      height: 38px;
     }
 
-    /* tabela periódica */
+    .logo-text {
+      font-size: 33px;
+      font-weight: 700;
+      color: #ffcc00;
+      margin: 0;
+      font-family: 'Segoe UI', "Poppins", sans-serif;
+    }
+
+    /* ===== TÍTULO DA PÁGINA ===== */
+    .title{
+      text-align: center;
+      color:#1125bd;
+      font-family:"Segoe UI","Poppins",sans-serif;
+      font-weight:700;
+      padding: 20px 7px 0 7px;
+      font-size: 23px;
+    }
+
+    /* ===== GRID DO ALFABETO ===== */
     .periodic{
       display:grid;
       grid-template-columns: repeat(13, 1fr);
       gap:12px;
       align-items:start;
+      max-width:1100px;
+      margin: 0 auto;
     }
+
     .cell{
-      background:var(--card-bg);
+      background:#ffffe4;
       border-radius:8px;
       padding:10px;
       min-height:84px;
@@ -115,14 +89,14 @@
       box-shadow:0 8px 22px rgba(2,20,50,0.06);
       border:1px solid rgba(0,0,0,0.03);
       position:relative;
-      transition: 0.5s;
+      transition:0.5s;
     }
     .cell .num{position:absolute;left:8px;top:6px;font-size:12px;opacity:.8}
     .cell .letter{font-size:34px;font-weight:900;line-height:1}
     .cell .name{margin-top:6px;font-size:13px;opacity:.85}
 
-    .cell.blue{background:linear-gradient(135deg, #1125bd, #3f6cf5);color:white}
-    .cell.yellow{background:linear-gradient(135deg, #ffbf00, #f8e299);color:var(--blue-deep)}
+    .cell.blue{background:linear-gradient(135deg,#1125bd,#3f6cf5);color:white}
+    .cell.yellow{background:linear-gradient(135deg,#ffbf00,#f8e299);color:#013a63}
 
     .cell:hover{transform: scale(1.25);}
 
@@ -132,83 +106,80 @@
       .cell .letter{font-size:28px}
     }
 
+    /* ===== RODAPÉ ===== */
     footer {
-      background-color: #1125bd;
+      background-color: var(--blue);
       color: white;
       text-align: center;
       padding: 30px 0;
       margin-top: 50px;
       font-size: 0.9rem;
     }
+
   </style>
 </head>
 
 <header>
   <nav>
-    <a>
-      <img src="img/aprendendo (2).png" alt="Librando e Aprendendo" style="height: 40px;">
-    </a>
-    <a href="quemsomos.html">
-      <img src="img/group.png" alt="Quem Somos" style="height: 40px;">
+    <a href="learning.html">
+      <img src="img/aprendendo.png" alt="Librando e Aprendendo">
     </a>
 
-    <h1>
-      <a href="index.html" class="highlight">Librando</a>
-    </h1>
+    <a href="quemsomos.html">
+      <img src="img/group.png" alt="Quem Somos">
+    </a>
+
+    <h1 class="logo-text">Librando</h1>
   </nav>
 </header>
 
 <body>
-  <div class="wrap">
-    <div class="title">
-      <br>
-      <h1>Alfabeto em Libras </h1>
-      <p class="lead"></p>
-    </div>
-
-    <br><br><br>
-
-    <main>
-      <section class="periodic" aria-label="Alfabeto">
-
-        <td><div class="cell blue"><div class="num">A</div><div class="letter">A</div><div class="name">Abacaxi</div></div></td>
-        <div class="cell yellow"><div class="num">B</div><div class="letter">B</div><div class="name">Borboleta</div></div>
-        <div class="cell blue"><div class="num">C</div><div class="letter">C</div><div class="name">Cachorro</div></div>
-        <div class="cell yellow"><div class="num">D</div><div class="letter">D</div><div class="name">Dado</div></div>
-        <div class="cell blue"><div class="num">E</div><div class="letter">E</div><div class="name">Elefante</div></div>
-        <div class="cell yellow"><div class="num">F</div><div class="letter">F</div><div class="name">Flauta</div></div>
-        <div class="cell blue"><div class="num">G</div><div class="letter">G</div><div class="name">Gato</div></div>
-        <div class="cell yellow"><div class="num">H</div><div class="letter">H</div><div class="name">Helicóptero</div></div>
-        <div class="cell blue"><div class="num">I</div><div class="letter">I</div><div class="name">Igreja</div></div>
-        <div class="cell yellow"><div class="num">J</div><div class="letter">J</div><div class="name">Jacaré</div></div>
-        <div class="cell blue"><div class="num">K</div><div class="letter">K</div><div class="name">Ketchup</div></div>
-        <div class="cell yellow"><div class="num">L</div><div class="letter">L</div><div class="name">Livro</div></div>
-        <div class="cell blue"><div class="num">M</div><div class="letter">M</div><div class="name">Maçã</div></div>
-
-        <div class="cell yellow"><div class="num">N</div><div class="letter">N</div><div class="name">Navio</div></div>
-        <div class="cell blue"><div class="num">O</div><div class="letter">O</div><div class="name">Ovelha</div></div>
-        <div class="cell yellow"><div class="num">P</div><div class="letter">P</div><div class="name">Pipa</div></div>
-        <div class="cell blue"><div class="num">Q</div><div class="letter">Q</div><div class="name">Queijo</div></div>
-        <div class="cell yellow"><div class="num">R</div><div class="letter">R</div><div class="name">Rato</div></div>
-        <div class="cell blue"><div class="num">S</div><div class="letter">S</div><div class="name">Sol</div></div>
-        <div class="cell yellow"><div class="num">T</div><div class="letter">T</div><div class="name">Trem</div></div>
-        <div class="cell blue"><div class="num">U</div><div class="letter">U</div><div class="name">Urso</div></div>
-        <div class="cell yellow"><div class="num">V</div><div class="letter">V</div><div class="name">Vela</div></div>
-        <div class="cell blue"><div class="num">W</div><div class="letter">W</div><div class="name">Water</div></div>
-        <div class="cell yellow"><div class="num">X</div><div class="letter">X</div><div class="name">Xícara</div></div>
-        <div class="cell blue"><div class="num">Y</div><div class="letter">Y</div><div class="name">Yakult</div></div>
-        <div class="cell yellow"><div class="num">Z</div><div class="letter">Z</div><div class="name">Zebra</div></div>
-
-      </section>
-    </main>
+  <div class="title">
+    <h1>Alfabeto em Libras</h1>
   </div>
+
+  <br><br>
+
+  <main>
+    <section class="periodic" aria-label="Alfabeto">
+
+      <div class="cell blue"><div class="num">A</div><div class="letter">A</div><div class="name">Abacaxi</div></div>
+      <div class="cell yellow"><div class="num">B</div><div class="letter">B</div><div class="name">Borboleta</div></div>
+      <div class="cell blue"><div class="num">C</div><div class="letter">C</div><div class="name">Cachorro</div></div>
+      <div class="cell yellow"><div class="num">D</div><div class="letter">D</div><div class="name">Dado</div></div>
+      <div class="cell blue"><div class="num">E</div><div class="letter">E</div><div class="name">Elefante</div></div>
+      <div class="cell yellow"><div class="num">F</div><div class="letter">F</div><div class="name">Flauta</div></div>
+      <div class="cell blue"><div class="num">G</div><div class="letter">G</div><div class="name">Gato</div></div>
+      <div class="cell yellow"><div class="num">H</div><div class="letter">H</div><div class="name">Helicóptero</div></div>
+      <div class="cell blue"><div class="num">I</div><div class="letter">I</div><div class="name">Igreja</div></div>
+      <div class="cell yellow"><div class="num">J</div><div class="letter">J</div><div class="name">Jacaré</div></div>
+      <div class="cell blue"><div class="num">K</div><div class="letter">K</div><div class="name">Ketchup</div></div>
+      <div class="cell yellow"><div class="num">L</div><div class="letter">L</div><div class="name">Livro</div></div>
+      <div class="cell blue"><div class="num">M</div><div class="letter">M</div><div class="name">Maçã</div></div>
+      <div class="cell yellow"><div class="num">N</div><div class="letter">N</div><div class="name">Navio</div></div>
+      <div class="cell blue"><div class="num">O</div><div class="letter">O</div><div class="name">Ovelha</div></div>
+      <div class="cell yellow"><div class="num">P</div><div class="letter">P</div><div class="name">Pipa</div></div>
+      <div class="cell blue"><div class="num">Q</div><div class="letter">Q</div><div class="name">Queijo</div></div>
+      <div class="cell yellow"><div class="num">R</div><div class="letter">R</div><div class="name">Rato</div></div>
+      <div class="cell blue"><div class="num">S</div><div class="letter">S</div><div class="name">Sol</div></div>
+      <div class="cell yellow"><div class="num">T</div><div class="letter">T</div><div class="name">Trem</div></div>
+      <div class="cell blue"><div class="num">U</div><div class="letter">U</div><div class="name">Urso</div></div>
+      <div class="cell yellow"><div class="num">V</div><div class="letter">V</div><div class="name">Vela</div></div>
+      <div class="cell blue"><div class="num">W</div><div class="letter">W</div><div class="name">Water</div></div>
+      <div class="cell yellow"><div class="num">X</div><div class="letter">X</div><div class="name">Xícara</div></div>
+      <div class="cell blue"><div class="num">Y</div><div class="letter">Y</div><div class="name">Yakult</div></div>
+      <div class="cell yellow"><div class="num">Z</div><div class="letter">Z</div><div class="name">Zebra</div></div>
+
+    </section>
+  </main>
 
   <br><br><br>
 </body>
 
 <footer>
   Contatos: <br><br>
-  beatriz.jacondino@gmail.com | barbara04franco@gmail.com | fabio.rodriguessantos1974@gmail.com | liviaoliveira021007@gmail.com | marina.ftanaka@gmail.com
+  beatriz.jacondino@gmail.com | barbara04franco@gmail.com | fabio.rodriguessantos1974@gmail.com |
+  liviaoliveira021007@gmail.com | marina.ftanaka@gmail.com
   <br><br>
   © 2025 Librando | Projeto TCC - ETEC Rosa Perrone Scavone
 </footer>
