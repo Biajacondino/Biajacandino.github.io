@@ -21,36 +21,40 @@
     }
 
     /* ===== HEADER PADRONIZADO ===== */
-    header {
-      background-color: #1125bd;
-      color: white;
-      padding: 22px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      justify-content: flex-start;
-    }
+    /* ===== HEADER IGUAL AO DA IMAGEM ===== */
+header {
+  width: 100%;
+  background-color: #1125bd;
+  color: white;
+  padding: 22px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-    nav {
-      display: flex;
-      justify-content: flex-start;
-      gap: 50px;
-      padding-left: 50px;
-      align-items: center;
-    }
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 50px; /* distância igual à da imagem */
+  padding-left: 50px; /* empurra tudo para a esquerda */
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 400;
-      transition: 0.3s;
-    }
+.top-nav img {
+  height: 42px; /* mesmo tamanho da imagem enviada */
+}
 
-    nav a:hover { text-decoration: underline; }
+.logo-text {
+  margin: 0;
+  font-family: "Segoe UI", "Poppins", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+}
 
-    nav img {
-      height: 40px;
-    }
+.logo-text a {
+  color: white;
+  text-decoration: none;
+}
+
 
     .highlight {
       color: #ffffff;
@@ -127,7 +131,7 @@
 
 <!-- HEADER ALTERADO (PADRONIZADO) -->
 <header>
-  <nav>
+  <nav class="top-nav">
     <a href="learning.html">
       <img src="img/aprendendo (2).png" alt="Librando e Aprendendo">
     </a>
@@ -136,7 +140,7 @@
       <img src="img/group.png" alt="Quem Somos">
     </a>
 
-    <h1>
+    <h1 class="logo-text">
       <a href="index.html" class="highlight">Librando</a>
     </h1>
   </nav>
