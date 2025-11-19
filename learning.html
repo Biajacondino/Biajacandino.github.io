@@ -22,12 +22,13 @@
 
     /* ===== HEADER PADRONIZADO ===== */
     header {
-      background-color: var(--blue);
+      background-color: #1125bd;
       color: white;
-      padding: 20px 0;
+      padding: 22px 0;
       position: sticky;
       top: 0;
       z-index: 1000;
+      justify-content: flex-start;
     }
 
     nav {
@@ -36,7 +37,6 @@
       gap: 50px;
       padding-left: 50px;
       align-items: center;
-      flex-wrap: wrap;
     }
 
     nav a {
@@ -49,15 +49,14 @@
     nav a:hover { text-decoration: underline; }
 
     nav img {
-      height: 38px;
+      height: 40px;
     }
 
-    .logo-text {
-      font-size: 33px;
-      font-weight: 700;
+    .highlight {
       color: #ffffff;
-      margin: 0;
-      font-family: 'Segoe UI', "Poppins", sans-serif;
+      font-family: "Segoe UI", "Poppins", sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
 
     /* ===== TÍTULO DA PÁGINA ===== */
@@ -122,11 +121,11 @@
       margin-top: 50px;
       font-size: 0.9rem;
     }
-    
 
   </style>
 </head>
 
+<!-- HEADER ALTERADO (PADRONIZADO) -->
 <header>
   <nav>
     <a href="learning.html">
@@ -136,7 +135,10 @@
     <a href="quemsomos.html">
       <img src="img/group.png" alt="Quem Somos">
     </a>
-<h1><a href="index.html" class="highlight">Librando</a></h1>
+
+    <h1>
+      <a href="index.html" class="highlight">Librando</a>
+    </h1>
   </nav>
 </header>
 
