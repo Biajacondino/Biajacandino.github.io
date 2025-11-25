@@ -20,9 +20,10 @@
       text-align: center;
       background-color: var(--bg);
     }
+
     /* ===== HEADER PADRONIZADO ===== */
  header {
-  background-color: #1125bd;
+  background-color: #ff008c;
   color: white;
   padding: 0;              /* zero padding */
   height: 90px;            /* altura super fina */
@@ -32,6 +33,7 @@
   top: 0;
   z-index: 1000;
   width: 100%;
+  overflow-x: auto; /* evita corte horizontal */
   white-space: nowrap; /* impede textos quebrados */
 }
 
@@ -39,7 +41,8 @@
   display: flex;
   align-items: center;
   gap: 50px;
-  padding-left: 50px;
+  padding-left: 0 !important; /* remove empurrão para direita */
+  flex-wrap: wrap; /* permite conteúdo quebrar se necessário */
   width: 100%;
 }
  nav img {
