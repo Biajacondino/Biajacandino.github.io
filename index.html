@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Librando</title>
+  <link rel="shortcut icon" type="image/x-icon" href="img/Pegada Azul Minimalista.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -43,13 +44,17 @@
 
     /* ====== CABEÇALHO ====== */
     header {
-      background-color: #1125bd;
-      color: white;
-      padding: 22px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+  background-color: #1125bd;
+  color: white;
+  padding: 0;              /* zero padding */
+  height: 90px;            /* altura super fina */
+  display: flex;
+  align-items: center;     /* centraliza verticalmente */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 
     nav {
       display: flex;
@@ -149,11 +154,17 @@
   transform: scale(0.8) !important;
   transform-origin: bottom right !important;
 }
+.logo-gato {
+  height: 150px;   /* Aumente ou diminua aqui */
+  width: auto;
+}
+
   </style>
 </head>
 
 <header>
   <nav>
+     <img src="img/librando.png" alt="Librando" class="logo-gato">
     <a href="learning.html">
       <img src="img/aprendendo.png" alt="Página Inicial">
     </a>
@@ -161,8 +172,6 @@
     <a href="quemsomos.html">
       <img src="img/group.png" alt="Quem Somos">
     </a>
-
-    <h1 class="logo-text">Librando</h1>
   </nav>
 </header>
 

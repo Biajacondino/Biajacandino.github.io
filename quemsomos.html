@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Quem Somos?</title>
   <style>
+    .logo-gato {
+  height: 150px;   /* Aumente ou diminua aqui */
+  width: auto;
+}
      .highlight {
     color: #ffffff; 
     font-family: "Segoe UI", "Poppins", sans-serif; 
@@ -55,7 +59,19 @@
     }
 
     .container{max-width:1100px;margin:36px auto;padding:28px}
-    header{display:flex;align-items:center;gap:16px;}
+     header {
+  background-color: #1125bd;
+  color: white;
+  padding: 0;              /* zero padding */
+  height: 90px;            /* altura super fina */
+  display: flex;
+  align-items: center;     /* centraliza verticalmente */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
     .brand{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--yellow));display:flex;align-items:center;justify-content:center;color:white;font-weight:900}
     h1{
       margin:0;
@@ -155,15 +171,15 @@
 </head>
 <header>
  <nav>
+  <a href="index.html">
+    <img src="img/librando.png" alt="Librando" class="logo-gato">
+  </a>
   <a href="learning.html">
     <img src="img/aprendendo.png" alt="Librando e Aprendendo" style="height: 40px;">
   </a>
   <a>
     <img src="img/group (1).png" alt="Quem Somos" style="height: 40px;">
   </a>
-  <h1>
-    <a href="index.html" class="highlight">Librando</a>
-  </h1>
 </nav>
 </header>
 <body>
