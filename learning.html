@@ -74,14 +74,15 @@
     }
 
     /* ===== GRID ===== */
-    .periodic{
-      display:grid;
-      grid-template-columns: repeat(13, 1fr);
-      gap:12px;
-      align-items:start;
-      max-width:1100px;
-      margin: 0 auto;
-    }
+    .periodic {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+  gap: 12px;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 
     .periodic.numbers{
       grid-template-columns: repeat(10, 1fr);
