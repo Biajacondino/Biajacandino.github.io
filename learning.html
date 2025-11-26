@@ -190,6 +190,36 @@ footer {
   height: 150px;   /* Aumente ou diminua aqui */
   width: auto;
 }
+#videoModal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+#videoModal video {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000;
+}
+
+#closeVideoModal {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
 </style>
 </head>
 
@@ -220,7 +250,51 @@ footer {
   <span id="closeModal">×</span>
   <img id="modalImage" src="">
 </div>
+<div class="title">
+  <h1>Expressões em Libras</h1>
+</div>
+<section class="periodic" aria-label="Expressões">
+  <div class="cell blue video-btn" data-video="videos/oi.mp4">
+    <div class="num">1</div><div class="name">Olá/Oi</div>
+  </div>
 
+  <div class="cell yellow video-btn" data-video="videos/TB.mp4">
+    <div class="num">2</div><div class="name">Tudo Bem?</div>
+  </div>
+
+  <div class="cell blue video-btn" data-video="videos/dia.mp4">
+    <div class="num">3</div><div class="name">Bom Dia
+    </div>
+  </div>
+
+  <div class="cell yellow video-btn" data-video="videos/tarde.mp4">
+    <div class="num">4</div><div class="name">Boa Tarde</div>
+  </div>
+
+  <div class="cell blue video-btn" data-video="videos/noite.mp4">
+    <div class="num">5</div><div class="name">Boa Noite</div>
+  </div>
+
+  <div class="cell yellow video-btn" data-video="videos/licença.mp4">
+    <div class="num">6</div><div class="name">Com licença/Por favor</div>
+  </div>
+
+  <div class="cell blue video-btn" data-video="videos/amo.mp4">
+    <div class="num">7</div><div class="name">Te amo</div>
+  </div>
+
+  <div class="cell yellow video-btn" data-video="videos/S.mp4">
+    <div class="num">8</div><div class="name">Sim</div>
+  </div>
+
+  <div class="cell blue video-btn" data-video="videos/N.mp4">
+    <div class="num">9</div><div class="name">Não</div>
+  </div>
+</section>
+<div id="videoModal">
+  <span id="closeVideoModal">×</span>
+  <video id="modalVideo" controls></video>
+</div>
 <div class="title">
   <h1>Alfabeto em Libras</h1>
 </div>
@@ -347,9 +421,10 @@ footer {
 </section>
 <br><br><br>
 <div class="title">
-  <h1>Expressões em Libras</h1>
+  <h1>Cores</h1>
 </div>
 
+<br><br><br>
 <footer>
   Contatos: <br><br>
   beatriz.jacondino@gmail.com | barbara04franco@gmail.com | fabio.rodriguessantos1974@gmail.com |
@@ -369,6 +444,27 @@ document.querySelectorAll(".img-btn").forEach(cell => {
 document.getElementById("closeModal").addEventListener("click", () => {
   document.getElementById("imgModal").style.display = "none";
 });
+// ==== MODAL DE VÍDEO ====
+document.querySelectorAll(".video-btn").forEach(cell => {
+  cell.addEventListener("click", () => {
+    const videoPath = cell.getAttribute("data-video");
+    const modalVideo = document.getElementById("modalVideo");
+
+    modalVideo.src = videoPath;
+    modalVideo.load();
+    modalVideo.play();
+
+    document.getElementById("videoModal").style.display = "flex";
+  });
+});
+
+document.getElementById("closeVideoModal").addEventListener("click", () => {
+  const modalVideo = document.getElementById("modalVideo");
+  modalVideo.pause();
+  modalVideo.src = "";
+  document.getElementById("videoModal").style.display = "none";
+});
+
 </script>
 </body>
 </html>
