@@ -219,6 +219,19 @@ footer {
   color: white;
   cursor: pointer;
 }
+.color-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.4), 0 0 6px rgba(0,0,0,0.3);
+}
+
+.color-btn:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
+}
 
 </style>
 </head>
@@ -423,6 +436,27 @@ footer {
 <div class="title">
   <h1>Cores</h1>
 </div>
+<section class="periodic" aria-label="Cores">
+  
+  <div class="cell color-btn" style="background:#ff0000;" data-video="videos/cor-vermelho.mp4"></div>
+
+  <div class="cell color-btn" style="background:#00a2ff;" data-video="videos/cor-azul.mp4"></div>
+
+  <div class="cell color-btn" style="background:#00ff2a;" data-video="videos/cor-verde.mp4"></div>
+
+  <div class="cell color-btn" style="background:#ffea00;" data-video="videos/cor-amarelo.mp4"></div>
+
+  <div class="cell color-btn" style="background:#ff8a00;" data-video="videos/cor-laranja.mp4"></div>
+
+  <div class="cell color-btn" style="background:#a600ff;" data-video="videos/cor-roxo.mp4"></div>
+
+  <div class="cell color-btn" style="background:#ff00aa;" data-video="videos/cor-rosa.mp4"></div>
+
+  <div class="cell color-btn" style="background:#8d8d8d;" data-video="videos/cor-cinza.mp4"></div>
+
+  <div class="cell color-btn" style="background:#000000;" data-video="videos/cor-preto.mp4"></div>
+
+</section>
 
 <br><br><br>
 <footer>
@@ -463,6 +497,20 @@ document.getElementById("closeVideoModal").addEventListener("click", () => {
   modalVideo.pause();
   modalVideo.src = "";
   document.getElementById("videoModal").style.display = "none";
+});
+
+// === TABELA DE CORES ABRIR VÍDEO ====
+document.querySelectorAll(".color-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const videoPath = btn.getAttribute("data-video");
+    const modalVideo = document.getElementById("modalVideo");
+
+    modalVideo.src = videoPath;
+    modalVideo.load();
+    modalVideo.play();
+
+    document.getElementById("videoModal").style.display = "flex";
+  });
 });
 
 </script>
