@@ -5,350 +5,393 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Librando e Aprendendo</title>
   <link rel="shortcut icon" type="image/x-icon" href="img/Pegada Azul Minimalista.png">
+  <style>:root {
+  --blue: #1125bd;
+  --yellow: #ffbf00;
+  --pink: #ff008c;
+  --bg: #ffffe4;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
 
-  <style>
-    :root{
-      --blue:#1125bd;
-      --yellow:#ffbf00;
-      --bg:#ffffe4;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-    }
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  background: var(--bg);
+  text-align: center;
+  width: 100%;
+}
 
-    body{
-      margin:0;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: var(--bg);
-    }
-
-    /* ===== HEADER PADRONIZADO ===== */
- header {
-  background-color: #ff008c;
-  color: white;
-  padding: 0;              /* zero padding */
-  height: 90px;            /* altura super fina */
+/* ===== HEADER ===== */
+header {
+  background-color: var(--pink);
+  height: 90px;
   display: flex;
-  align-items: center;     /* centraliza verticalmente */
+  align-items: center;
+  justify-content: center;
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
-  overflow-x: auto; /* evita corte horizontal */
-  white-space: nowrap; /* impede textos quebrados */
 }
 
 .top-nav {
   display: flex;
   align-items: center;
   gap: 25px;
-  padding-left: 20px !important; /* remove empurrão para direita */
-  flex-wrap: wrap; /* permite conteúdo quebrar se necessário */
-  width: 100%;
+  padding: 0 15px;
 }
- nav img {
-      height: 38px;
-    }
 
-.logo-text {
-  margin: 0;
-  font-family: "Segoe UI", "Poppins", sans-serif;
-  font-size: 32px;
+nav img {
+  height: 55px;
+  width: auto;
+}
+
+/* ===== TITULOS ===== */
+.title h1 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  color: var(--blue);
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
+  font-size: 42px;
 }
 
-.logo-text a {
-  color: white;
-  text-decoration: none;
-}
-
-    .highlight {
-      color: #ffffff;
-      font-family: "Segoe UI", "Poppins", sans-serif;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    /* ===== TÍTULO ===== */
-    .title{
-      text-align: center;
-      color:#1125bd;
-      font-family:"Segoe UI","Poppins",sans-serif;
-      font-weight:700;
-      padding: 20px 7px 0 7px;
-      font-size: 23px;
-    }
-
-    /* ===== GRID ===== */
-    .periodic {
+/* ===== GRID DO ALFABETO ===== */
+.periodic {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
-  gap: 12px;
-  align-items: start;
-  max-width: 1100px;
+  grid-template-columns: repeat(11, 1fr); /* Igual à foto */
+  gap: 20px;
+  padding: 20px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
+/* ===== CÉLULAS ===== */
+.cell {
+  width: 120px;
+  height: 150px;
+  background: #ffffe4;
+  border-radius: 12px;
+  padding: 10px;
 
-    .periodic.numbers{
-      grid-template-columns: repeat(10, 1fr);
-      justify-content: center;
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 
-    .cell{
-      background:#ffffe4;
-      border-radius:8px;
-      padding:10px;
-      min-height:84px;
-      display:flex;flex-direction:column;justify-content:center;align-items:center;
-      box-shadow:0 8px 22px rgba(2,20,50,0.06);
-      border:1px solid rgba(0,0,0,0.03);
-      position:relative;
-      transition:0.5s;
-      cursor: pointer;
-    }
+  box-shadow: 0 8px 22px rgba(2, 20, 50, 0.06);
+  cursor: pointer;
+  transition: transform .3s;
+}
 
-    .cell .num{position:absolute;left:8px;top:6px;font-size:12px;opacity:.8}
-    .cell .letter{font-size:34px;font-weight:900;line-height:1}
-    .cell .name{margin-top:6px;font-size:13px;opacity:.85}
+.cell:hover {
+  transform: scale(1.10);
+}
 
-    .cell.blue{background:linear-gradient(135deg,#1125bd,#3f6cf5);color:white}
-    .cell.yellow{background:linear-gradient(135deg,#ffbf00,#f8e299);color:#013a63}
+.cell .num {
+  font-size: 12px;
+  opacity: .8;
+  align-self: flex-start;
+}
 
-    .cell:hover{transform: scale(1.25);}
+.cell .letter {
+  font-size: 45px;
+  font-weight: 900;
+  margin-top: 10px;
+}
 
-    @media (max-width:980px){ .periodic{grid-template-columns:repeat(9,1fr)} }
-    @media (max-width:640px){ 
-      .periodic{grid-template-columns:repeat(6,1fr)} 
-      .periodic.numbers{grid-template-columns: repeat(5, 1fr);}
-      .cell .letter{font-size:28px}
-    }
+.cell .name {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 500;
+}
 
-    /* ===== MODAL ===== */
+/* ===== CORES DAS CÉLULAS ===== */
+.cell.blue {
+  background: var(--blue);
+  color: white;
+}
+
+.cell.yellow {
+  background: var(--yellow);
+  color: #013a63;
+}
+
+/* ===== MODAL ===== */
 #imgModal {
   display: none;
   position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
   justify-content: center;
   align-items: center;
+  z-index: 2000;
 }
 
 #imgModal img {
-  max-width: 80%;
-  max-height: 80%;
-  border-radius: 10px;
-  box-shadow: 0 0 20px #000;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  object-fit: contain;
 }
 
 #closeModal {
   position: absolute;
   top: 20px;
-  right: 40px;
-  font-size: 40px;
+  right: 35px;
+  font-size: 45px;
   font-weight: bold;
   color: white;
   cursor: pointer;
 }
 
-    /* ===== RODAPÉ ===== */
+/* ===== FOOTER ===== */
 footer {
-  background-color: var(--blue);
-  color: white;
-  text-align: center;
-  padding: 30px 10px;
   margin-top: 50px;
+  background: var(--blue);
+  color: white;
+  padding: 30px;
   font-size: 0.9rem;
 }
+
 .logo-gato {
-  height: 150px;   /* Aumente ou diminua aqui */
+  height: 65px;
   width: auto;
 }
-</style>
-</head>
 
+/* ===== RESPONSIVIDADE ===== */
+
+/* 8 colunas */
+@media (max-width: 1400px) {
+  .periodic {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+/* 5 colunas */
+@media (max-width: 1000px) {
+  .periodic {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* 3 colunas */
+@media (max-width: 700px) {
+  .periodic {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .title h1 {
+    font-size: 32px;
+  }
+}
+
+/* 2 colunas */
+@media (max-width: 480px) {
+  .periodic {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  nav img {
+    height: 40px;
+  }
+}
+  </style>
+</head>
 <body>
 
-<!-- HEADER AGORA ESTÁ NO LUGAR CERTO -->
-<header>
-  <nav class="top-nav">
-     <a href="index.html">
-    <img src="img/librando.png" alt="Librando" class="logo-gato">
-  </a>
-    <a href="learning.html">
-      <img src="img/aprendendo (2).png" alt="Librando e Aprendendo">
-    </a>
+  <header>
+    <nav class="top-nav" aria-label="Navegação principal">
+      <a href="index.html"><img src="img/librando.png" alt="Librando" /></a>
+      <a href="learning.html"><img src="img/aprendendo (2).png" alt="Aprendendo" /></a>
+      <a href="quemsomos.html"><img src="img/group.png" alt="Quem Somos" /></a>
+      <a href="sobre.html"><img src="img/info.png" alt="Informações" /></a>
+    </nav>
+  </header>
 
-    <a href="quemsomos.html">
-      <img src="img/group.png" alt="Quem Somos">
-    </a>
+  <main>
+    <div class="page-title">
+      <h1>Alfabeto em Libras</h1>
+    </div>
 
-    <a href="sobre.html">
-        <img src="img/info.png" alt="Informações">
-    </a>
-  </nav>
-</header>
+      <!-- CENTER: Grid principal (alfabeto completo) -->
+      <div class="center-column" role="main" aria-label="Conteúdo principal">
+        <!-- Grid completo centralizado -->
+        <section class="periodic" aria-label="Alfabeto completo">
+          <div class="cell blue img-btn" data-img="img/alfabeto/A.png">
+            <div class="num">A</div><div class="letter">A</div><div class="name">Abacaxi</div>
+          </div>
+          <div class="cell yellow img-btn" data-img="img/alfabeto/B.png">
+            <div class="num">B</div><div class="letter">B</div><div class="name">Borboleta</div>
+          </div>
+          <div class="cell blue img-btn" data-img="img/alfabeto/C.png">
+            <div class="num">C</div><div class="letter">C</div><div class="name">Cachorro</div>
+          </div>
+          <div class="cell yellow img-btn" data-img="img/alfabeto/D.png">
+            <div class="num">D</div><div class="letter">D</div><div class="name">Dado</div>
+          </div>
+          <div class="cell blue img-btn" data-img="img/alfabeto/E.png">
+            <div class="num">E</div><div class="letter">E</div><div class="name">Elefante</div>
+          </div>
+          <div class="cell yellow img-btn" data-img="img/alfabeto/F.png">
+            <div class="num">F</div><div class="letter">F</div><div class="name">Flauta</div>
+          </div>
+          <div class="cell blue img-btn" data-img="img/alfabeto/G.png">
+            <div class="num">G</div><div class="letter">G</div><div class="name">Gato</div>
+          </div>
+          <div class="cell yellow img-btn" data-img="img/alfabeto/H.png">
+            <div class="num">H</div><div class="letter">H</div><div class="name">Helicóptero</div>
+          </div>
+          <div class="cell blue img-btn" data-img="img/alfabeto/I.png">
+            <div class="num">I</div><div class="letter">I</div><div class="name">Igreja</div>
+          </div>
+          <div class="cell yellow img-btn" data-img="img/alfabeto/J.png">
+            <div class="num">J</div><div class="letter">J</div><div class="name">Jacaré</div>
+          </div>
+          <div class="cell blue img-btn" data-img="img/alfabeto/K.png">
+            <div class="num">K</div><div class="letter">K</div><div class="name">Ketchup</div>
+          </div>
+          <div class="cell yellow img-btn" data-img="img/alfabeto/L.png">
+            <div class="num">L</div><div class="letter">L</div><div class="name">Livro</div>
+          </div>
+          <div class="cell blue img-btn" data-img="img/alfabeto/M.png">
+            <div class="num">M</div><div class="letter">M</div><div class="name">Maçã</div>
+          </div>
+          <div class="cell yellow img-btn" data-img="img/alfabeto/N.png">
+            <div class="num">N</div><div class="letter">N</div><div class="name">Navio</div>
+          </div>
+          <div class="cell blue img-btn" data-img="img/alfabeto/O.png">
+            <div class="num">O</div><div class="letter">O</div><div class="name">Ovelha</div>
+          </div>
+          <div class="cell yellow img-btn" data-img="img/alfabeto/P.png">
+            <div class="num">P</div><div class="letter">P</div><div class="name">Pipa</div>
+          </div>
+          <div class="cell blue img-btn" data-img="img/alfabeto/Q.png">
+            <div class="num">Q</div><div class="letter">Q</div><div class="name">Queijo</div>
+          </div>
+          <div class="cell yellow img-btn" data-img="img/alfabeto/R.png">
+            <div class="num">R</div><div class="letter">R</div><div class="name">Rato</div>
+          </div>
+          <div class="cell blue img-btn" data-img="img/alfabeto/S.png">
+            <div class="num">S</div><div class="letter">S</div><div class="name">Sol</div>
+          </div>
+          <div class="cell yellow img-btn" data-img="img/alfabeto/T.png">
+            <div class="num">T</div><div class="letter">T</div><div class="name">Trem</div>
+          </div>
+          <div class="cell blue img-btn" data-img="img/alfabeto/U.png">
+            <div class="num">U</div><div class="letter">U</div><div class="name">Urso</div>
+          </div>
+          <div class="cell yellow img-btn" data-img="img/alfabeto/V.png">
+            <div class="num">V</div><div class="letter">V</div><div class="name">Vela</div>
+          </div>
+          <div class="cell blue img-btn" data-img="img/alfabeto/W.png">
+            <div class="num">W</div><div class="letter">W</div><div class="name">Water</div>
+          </div>
+          <div class="cell yellow img-btn" data-img="img/alfabeto/X.png">
+            <div class="num">X</div><div class="letter">X</div><div class="name">Xícara</div>
+          </div>
+          <div class="cell blue img-btn" data-img="img/alfabeto/Y.png">
+            <div class="num">Y</div><div class="letter">Y</div><div class="name">Yakult</div>
+          </div>
+          <div class="cell yellow img-btn" data-img="img/alfabeto/Z.png">
+            <div class="num">Z</div><div class="letter">Z</div><div class="name">Zebra</div>
+          </div>
+        </section>
 
-<!-- MODAL DENTRO DO BODY -->
-<div id="imgModal">
-  <span id="closeModal">×</span>
-  <img id="modalImage" src="">
-</div>
+        <!-- Espaçamento e segundo título -->
+        <div style="height:6px"></div>
+        <div class="page-title"><h1>Números em Libras</h1></div>
 
-<div class="title">
-  <h1>Alfabeto em Libras</h1>
-</div>
+        <!-- Números: um grid menor -->
+        <section class="periodic numbers" aria-label="Números">
+          <div class="cell blue img-btn" data-img="img/numeros/0.jpeg"><div class="num">0</div><div class="letter">0</div></div>
+          <div class="cell yellow img-btn" data-img="img/numeros/1.jpeg"><div class="num">1</div><div class="letter">1</div></div>
+          <div class="cell blue img-btn" data-img="img/numeros/2.jpeg"><div class="num">2</div><div class="letter">2</div></div>
+          <div class="cell yellow img-btn" data-img="img/numeros/3.jpeg"><div class="num">3</div><div class="letter">3</div></div>
+          <div class="cell blue img-btn" data-img="img/numeros/4.jpeg"><div class="num">4</div><div class="letter">4</div></div>
+          <div class="cell yellow img-btn" data-img="img/numeros/5.jpeg"><div class="num">5</div><div class="letter">5</div></div>
+          <div class="cell blue img-btn" data-img="img/numeros/6.jpeg"><div class="num">6</div><div class="letter">6</div></div>
+          <div class="cell yellow img-btn" data-img="img/numeros/7.jpeg"><div class="num">7</div><div class="letter">7</div></div>
+          <div class="cell blue img-btn" data-img="img/numeros/8.jpeg"><div class="num">8</div><div class="letter">8</div></div>
+          <div class="cell yellow img-btn" data-img="img/numeros/9.jpeg"><div class="num">9</div><div class="letter">9</div></div>
+        </section>
+      </div>
 
-<br><br>
+      <!-- RIGHT: Contacts (agora apenas um box, não um rodapé lateral) -->
+      <div class="side-column" aria-label="Contatos">
+        <div class="contacts-box" role="complementary">
+          <strong>Contatos:</strong>
+          <a href="mailto:beatriz.jacondino@gmail.com">beatriz.jacondino@gmail.com</a>
+          <a href="mailto:barbara04franco@gmail.com">barbara04franco@gmail.com</a>
+          <a href="mailto:fabio.rodriguessantos1974@gmail.com">fabio.rodriguessantos1974@gmail.com</a>
+          <a href="mailto:liviaoliveira021007@gmail.com">liviaoliveira021007@gmail.com</a>
+          <a href="mailto:marina.ftanaka@gmail.com">marina.ftanaka@gmail.com</a>
+          <div style="margin-top:10px;font-size:13px">© 2025 Librando | Projeto TCC - ETEC Rosa Perrone Scavone</div>
+        </div>
+      </div>
 
-<main>
-<section class="periodic" aria-label="Alfabeto">
+    </div>
+  </main>
 
-  <!-- === SUAS CÉLULAS (mantidas iguais) === -->
-  <!-- Apenas removi comandos inválidos -->
+  <!-- FOOTER REAL -->
+  <footer>
+    <div class="footer-inner">
+      <div class="col">
+        <p><strong>Librando</strong></p>
+        <p>Projeto TCC - ETEC Rosa Perrone Scavone</p>
+      </div>
+      <div class="col">
+        <p>Contatos:</p>
+        <p>beatriz.jacondino@gmail.com | barbara04franco@gmail.com</p>
+      </div>
+      <div class="col">
+        <p>© 2025</p>
+      </div>
+    </div>
+  </footer>
 
-  <section class="periodic" aria-label="Alfabeto">
+  <!-- MODAL -->
+  <div id="imgModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <span id="closeModal" aria-label="Fechar modal">×</span>
+    <img id="modalImage" src="" alt="Imagem ampliada">
+  </div>
 
-  <div class="cell blue img-btn" data-img="img/alfabeto/A.png">
-    <div class="num">A</div><div class="letter">A</div><div class="name">Abacaxi</div>
-  </div>
-  <div class="cell yellow img-btn" data-img="img/alfabeto/B.png">
-    <div class="num">B</div><div class="letter">B</div><div class="name">Borboleta</div>
-  </div>
-  <div class="cell blue img-btn" data-img="img/alfabeto/C.png">
-    <div class="num">C</div><div class="letter">C</div><div class="name">Cachorro</div>
-  </div>
-  <div class="cell yellow img-btn" data-img="img/alfabeto/D.png">
-    <div class="num">D</div><div class="letter">D</div><div class="name">Dado</div>
-  </div>
-  <div class="cell blue img-btn" data-img="img/alfabeto/E.png">
-    <div class="num">E</div><div class="letter">E</div><div class="name">Elefante</div>
-  </div>
-  <div class="cell yellow img-btn" data-img="img/alfabeto/F.png">
-    <div class="num">F</div><div class="letter">F</div><div class="name">Flauta</div>
-  </div>
-  <div class="cell blue img-btn" data-img="img/alfabeto/G.png">
-    <div class="num">G</div><div class="letter">G</div><div class="name">Gato</div>
-  </div>
-  <div class="cell yellow img-btn" data-img="img/alfabeto/H.png">
-    <div class="num">H</div><div class="letter">H</div><div class="name">Helicóptero</div>
-  </div>
-  <div class="cell blue img-btn" data-img="img/alfabeto/I.png">
-    <div class="num">I</div><div class="letter">I</div><div class="name">Igreja</div>
-  </div>
-  <div class="cell yellow img-btn" data-img="img/alfabeto/J.png">
-    <div class="num">J</div><div class="letter">J</div><div class="name">Jacaré</div>
-  </div>
-  <div class="cell blue img-btn" data-img="img/alfabeto/K.png">
-    <div class="num">K</div><div class="letter">K</div><div class="name">Ketchup</div>
-  </div>
-  <div class="cell yellow img-btn" data-img="img/alfabeto/L.png">
-    <div class="num">L</div><div class="letter">L</div><div class="name">Livro</div>
-  </div>
-  <div class="cell blue img-btn" data-img="img/alfabeto/M.png">
-    <div class="num">M</div><div class="letter">M</div><div class="name">Maçã</div>
-  </div>
-  <div class="cell yellow img-btn" data-img="img/alfabeto/N.png">
-    <div class="num">N</div><div class="letter">N</div><div class="name">Navio</div>
-  </div>
-  <div class="cell blue img-btn" data-img="img/alfabeto/O.png">
-    <div class="num">O</div><div class="letter">O</div><div class="name">Ovelha</div>
-  </div>
-  <div class="cell yellow img-btn" data-img="img/alfabeto/P.png">
-    <div class="num">P</div><div class="letter">P</div><div class="name">Pipa</div>
-  </div>
-  <div class="cell blue img-btn" data-img="img/alfabeto/Q.png">
-    <div class="num">Q</div><div class="letter">Q</div><div class="name">Queijo</div>
-  </div>
-  <div class="cell yellow img-btn" data-img="img/alfabeto/R.png">
-    <div class="num">R</div><div class="letter">R</div><div class="name">Rato</div>
-  </div>
-  <div class="cell blue img-btn" data-img="img/alfabeto/S.png">
-    <div class="num">S</div><div class="letter">S</div><div class="name">Sol</div>
-  </div>
-  <div class="cell yellow img-btn" data-img="img/alfabeto/T.png">
-    <div class="num">T</div><div class="letter">T</div><div class="name">Trem</div>
-  </div>
-  <div class="cell blue img-btn" data-img="img/alfabeto/U.png">
-    <div class="num">U</div><div class="letter">U</div><div class="name">Urso</div>
-  </div>
-  <div class="cell yellow img-btn" data-img="img/alfabeto/V.png">
-    <div class="num">V</div><div class="letter">V</div><div class="name">Vela</div>
-  </div>
-  <div class="cell blue img-btn" data-img="img/alfabeto/W.png">
-    <div class="num">W</div><div class="letter">W</div><div class="name">Water</div>
-  </div>
-  <div class="cell yellow img-btn" data-img="img/alfabeto/X.png">
-    <div class="num">X</div><div class="letter">X</div><div class="name">Xícara</div>
-  </div>
-  <div class="cell blue img-btn" data-img="img/alfabeto/Y.png">
-    <div class="num">Y</div><div class="letter">Y</div><div class="name">Yakult</div>
-  </div>
-  <div class="cell yellow img-btn" data-img="img/alfabeto/Z.png">
-    <div class="num">Z</div><div class="letter">Z</div><div class="name">Zebra</div>
-  </div>
-</section>
-</section>
-<br>
-<div class="title">
-  <h1>Números em Libras</h1>
-</div>
-<br><br>
-  <section class="periodic numbers" aria-label="Números">
-  <div class="cell blue img-btn" data-img="img/numeros/0.jpeg">
-    <div class="num">0</div><div class="letter">0</div>
-  </div>
-  <div class="cell yellow img-btn" data-img="img/numeros/1.jpeg">
-    <div class="num">1</div><div class="letter">1</div>
-  </div>
-  <div class="cell blue img-btn" data-img="img/numeros/2.jpeg">
-    <div class="num">2</div><div class="letter">2</div>
-  </div>
-  <div class="cell yellow img-btn" data-img="img/numeros/3.jpeg">
-    <div class="num">3</div><div class="letter">3</div>
-  </div>
-  <div class="cell blue img-btn" data-img="img/numeros/4.jpeg">
-    <div class="num">4</div><div class="letter">4</div>
-  </div>
-  <div class="cell yellow img-btn" data-img="img/numeros/5.jpeg">
-    <div class="num">5</div><div class="letter">5</div>
-  </div>
-  <div class="cell blue img-btn" data-img="img/numeros/6.jpeg">
-    <div class="num">6</div><div class="letter">6</div>
-  </div>
-  <div class="cell yellow img-btn" data-img="img/numeros/7.jpeg">
-    <div class="num">7</div><div class="letter">7</div>
-  </div>
-  <div class="cell blue img-btn" data-img="img/numeros/8.jpeg">
-    <div class="num">8</div><div class="letter">8</div>
-  </div>
-  <div class="cell yellow img-btn" data-img="img/numeros/9.jpeg">
-    <div class="num">9</div><div class="letter">9</div>
-  </div>
-</section>
-<br><br><br>
-<footer>
-  Contatos: <br><br>
-  beatriz.jacondino@gmail.com | barbara04franco@gmail.com | fabio.rodriguessantos1974@gmail.com |
-  liviaoliveira021007@gmail.com | marina.ftanaka@gmail.com
-  <br><br>
-  © 2025 Librando | Projeto TCC - ETEC Rosa Perrone Scavone
-</footer>
-<!-- ==== AGORA O SCRIPT ESTÁ NO FINAL ==== -->
-<script>
-document.querySelectorAll(".img-btn").forEach(cell => {
-  cell.addEventListener("click", () => {
-    const imgPath = cell.getAttribute("data-img");
-    document.getElementById("modalImage").src = imgPath;
-    document.getElementById("imgModal").style.display = "flex";
-  });
-});
-document.getElementById("closeModal").addEventListener("click", () => {
-  document.getElementById("imgModal").style.display = "none";
-});
-</script>
+  <script>
+    // Abrir modal
+    document.querySelectorAll(".img-btn").forEach(cell => {
+      cell.addEventListener("click", () => {
+        const imgPath = cell.getAttribute("data-img");
+        const modal = document.getElementById("imgModal");
+        const modalImg = document.getElementById("modalImage");
+        modalImg.src = imgPath;
+        modal.style.display = "flex";
+        modal.setAttribute("aria-hidden","false");
+      });
+    });
+
+    // Fechar modal
+    const closeBtn = document.getElementById("closeModal");
+    closeBtn.addEventListener("click", () => {
+      const modal = document.getElementById("imgModal");
+      modal.style.display = "none";
+      modal.setAttribute("aria-hidden","true");
+      document.getElementById("modalImage").src = "";
+    });
+
+    // fechar clicando fora da imagem
+    document.getElementById("imgModal").addEventListener("click", (e) => {
+      if (e.target.id === "imgModal") {
+        document.getElementById("closeModal").click();
+      }
+    });
+
+    // keyboard ESC fecha modal
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        const modal = document.getElementById("imgModal");
+        if (modal.style.display === "flex") closeBtn.click();
+      }
+    });
+  </script>
 </body>
 </html>
