@@ -5,7 +5,6 @@
   <title>Librando</title>
   <link rel="shortcut icon" type="image/x-icon" href="img/Pegada Azul Minimalista.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,7 +13,6 @@
       margin: 0;
       padding: 0;
     }
-
     #texto {
       width: 80%;
       padding: 15px;
@@ -24,7 +22,6 @@
       background: #f0f0f0;
       word-wrap: break-word;
     }
-
     button {
       font-size: 20px;
       padding: 10px 30px;
@@ -35,25 +32,20 @@
       color: white;
       transition: 0.3s;
     }
-
     button:hover {
       background-color: #3f6cf5;
     }
-
-    /* ====== CABEÇALHO ====== */
     header {
   background-color: #1125bd;
   color: white;
-  padding: 0;              /* zero padding */
-  height: 90px;            /* altura super fina */
+  padding: 0;
+  height: 90px;
   display: flex;
-  align-items: center;     /* centraliza verticalmente */
+  align-items: center;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
-
-
     nav {
       display: flex;
       justify-content: flex-start;
@@ -61,22 +53,18 @@
       padding-left: 20px;
       align-items: center;
     }
-
     nav a {
       color: white;
       text-decoration: none;
       font-weight: 400;
       transition: 0.3s;
     }
-
     nav a:hover {
       text-decoration: underline;
     }
-
     nav img {
       height: 38px;
     }
-
     .logo-text {
       font-size: 33px;
       font-weight: 700;
@@ -84,28 +72,22 @@
       margin: 0;
       font-family: 'Segoe UI', "Poppins", sans-serif;
     }
-
-    /* ====== SEÇÃO PRINCIPAL ====== */
     .hero {
       text-align: center;
       padding: 30px 30px;
       background: linear-gradient(135deg, #1125bd, #3f6cf5);
       color: white;
     }
-
     .hero h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
     }
-
     .hero p {
       font-size: 1.2rem;
       max-width: 700px;
       margin: 0 auto;
       line-height: 1.5;
     }
-
-    /* ====== CONTEÚDO ====== */
     .content {
       padding: 60px 20px;
       max-width: 1000px;
@@ -135,44 +117,36 @@
       font-weight: 700;
       letter-spacing: 1px;
     }
-
-    /* ===== VLibras FIXO E REDUZIDO ===== */
 [vw] {
   position: fixed !important;
-  bottom: 0.px !important; /* menor valor = mais alto na tela */
+  bottom: 0.px !important;
   right: 6px !important;
   z-index: 999999 !important;
 }
-
 [vw-plugin-wrapper] {
   transform: scale(0.8) !important;
   transform-origin: bottom right !important;
 }
 .logo-gato {
-  height: 150px;   /* Aumente ou diminua aqui */
+  height: 150px;
   width: auto;
 }
-
   </style>
 </head>
-
 <header>
   <nav>
      <img src="img/librando.png" alt="Librando" class="logo-gato">
     <a href="learning.html">
       <img src="img/aprendendo.png" alt="Página Inicial">
     </a>
-
     <a href="quemsomos.html">
       <img src="img/group.png" alt="Quem Somos">
     </a>
-    
     <a href="sobre.html">
         <img src="img/info.png" alt="Informações">
     </a>
   </nav>
 </header>
-
 <body>
   <br>
   <br>
@@ -194,62 +168,49 @@
 <br>
 <h1></h1>
 <br>
-  <!-- VLibras FIXO E REDUZIDO -->
   <div vw class="enabled">
       <div vw-access-button></div>
       <div vw-plugin-wrapper>
           <div class="vw-plugin-top-wrapper"></div>
       </div>
   </div>
-
-  <!-- Script VLibras ÚNICO -->
   <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
   <script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');
-
-    // Abre o VLibras automaticamente em modo reduzido
     window.addEventListener("load", function () {
       setTimeout(() => {
         const botaoAcessibilidade = document.querySelector("[vw-access-button]");
         if (botaoAcessibilidade) botaoAcessibilidade.click();
       }, 1200);
     });
-
     const botao = document.getElementById('microfone');
     const divTexto = document.getElementById('texto');
-
     function simularCliqueReal(elemento) {
       const evento = new MouseEvent("click", { bubbles: true, cancelable: true, view: window });
       elemento.dispatchEvent(evento);
     }
-
     if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
       alert('Seu navegador não suporta reconhecimento de voz. Use o Google Chrome.');
     } else {
       const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
       const reconhecedor = new SpeechRecognition();
       reconhecedor.lang = 'pt-BR';
-
       botao.addEventListener('click', () => {
         reconhecedor.start();
         botao.innerText = '🎤 Ouvindo...';
       });
-
       reconhecedor.onresult = (event) => {
         const texto = event.results[0][0].transcript;
         divTexto.textContent = texto;
-
         const range = document.createRange();
         range.selectNodeContents(divTexto);
         const sel = window.getSelection();
         sel.removeAllRanges();
         sel.addRange(range);
         divTexto.focus();
-
         simularCliqueReal(divTexto);
         botao.innerText = '✅ Fale novamente';
       };
-
       reconhecedor.onerror = (e) => {
         alert('Erro ao reconhecer a fala: ' + e.error);
         botao.innerText = 'Tente novamente';
