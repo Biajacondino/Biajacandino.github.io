@@ -202,14 +202,12 @@ footer {
   justify-content: center;
   align-items: center;
 }
-
 #videoModal video {
   max-width: 80%;
   max-height: 80%;
   border-radius: 10px;
   box-shadow: 0 0 20px #000;
 }
-
 #closeVideoModal {
   position: absolute;
   top: 20px;
@@ -227,18 +225,13 @@ footer {
   border-radius: 12px;
   box-shadow: inset 0 0 8px rgba(0,0,0,0.4), 0 0 6px rgba(0,0,0,0.3);
 }
-
 .color-btn:hover {
   transform: scale(1.05);
   transition: 0.2s;
 }
-
 </style>
 </head>
-
 <body>
-
-<!-- HEADER AGORA ESTÁ NO LUGAR CERTO -->
 <header>
   <nav class="top-nav">
      <a href="index.html">
@@ -247,18 +240,14 @@ footer {
     <a href="learning.html">
       <img src="img/aprendendo (2).png" alt="Librando e Aprendendo">
     </a>
-
     <a href="quemsomos.html">
       <img src="img/group.png" alt="Quem Somos">
     </a>
-
     <a href="sobre.html">
         <img src="img/info.png" alt="Informações">
     </a>
   </nav>
 </header>
-
-<!-- MODAL DENTRO DO BODY -->
 <div id="imgModal">
   <span id="closeModal">×</span>
   <img id="modalImage" src="">
@@ -270,36 +259,28 @@ footer {
   <div class="cell blue video-btn" data-video="videos/oi.mp4">
     <div class="num">1</div><div class="name">Olá/Oi</div>
   </div>
-
   <div class="cell yellow video-btn" data-video="videos/TB.mp4">
     <div class="num">2</div><div class="name">Tudo Bem?</div>
   </div>
-
   <div class="cell blue video-btn" data-video="videos/dia.mp4">
     <div class="num">3</div><div class="name">Bom Dia
     </div>
   </div>
-
   <div class="cell yellow video-btn" data-video="videos/tarde.mp4">
     <div class="num">4</div><div class="name">Boa Tarde</div>
   </div>
-
   <div class="cell blue video-btn" data-video="videos/noite.mp4">
     <div class="num">5</div><div class="name">Boa Noite</div>
   </div>
-
   <div class="cell yellow video-btn" data-video="videos/licença.mp4">
     <div class="num">6</div><div class="name">Com licença/Por favor</div>
   </div>
-
   <div class="cell blue video-btn" data-video="videos/amo.mp4">
     <div class="num">7</div><div class="name">Te amo</div>
   </div>
-
   <div class="cell yellow video-btn" data-video="videos/S.mp4">
     <div class="num">8</div><div class="name">Sim</div>
   </div>
-
   <div class="cell blue video-btn" data-video="videos/N.mp4">
     <div class="num">9</div><div class="name">Não</div>
   </div>
@@ -311,9 +292,7 @@ footer {
 <div class="title">
   <h1>Alfabeto em Libras</h1>
 </div>
-
 <br><br>
-
 <main>
 <section class="periodic" aria-label="Alfabeto">
   <div class="cell blue img-btn" data-img="img/alfabeto/A.jpeg">
@@ -437,27 +416,16 @@ footer {
   <h1>Cores</h1>
 </div>
 <section class="periodic" aria-label="Cores">
-  
-  <div class="cell color-btn" style="background:#ff0000;" data-video="videos/cor-vermelho.mp4"></div>
-
-  <div class="cell color-btn" style="background:#00a2ff;" data-video="videos/cor-azul.mp4"></div>
-
-  <div class="cell color-btn" style="background:#00ff2a;" data-video="videos/cor-verde.mp4"></div>
-
-  <div class="cell color-btn" style="background:#ffea00;" data-video="videos/cor-amarelo.mp4"></div>
-
-  <div class="cell color-btn" style="background:#ff8a00;" data-video="videos/cor-laranja.mp4"></div>
-
-  <div class="cell color-btn" style="background:#a600ff;" data-video="videos/cor-roxo.mp4"></div>
-
-  <div class="cell color-btn" style="background:#ff00aa;" data-video="videos/cor-rosa.mp4"></div>
-
-  <div class="cell color-btn" style="background:#8d8d8d;" data-video="videos/cor-cinza.mp4"></div>
-
-  <div class="cell color-btn" style="background:#000000;" data-video="videos/cor-preto.mp4"></div>
-
+  <div class="cell color-btn" style="background:#ff0000;" data-video="videos/vermelho.mp4"></div>
+  <div class="cell color-btn" style="background:#00a2ff;" data-video="videos/azul.mp4"></div>
+  <div class="cell color-btn" style="background:#00ff2a;" data-video="videos/verde.mp4"></div>
+  <div class="cell color-btn" style="background:#ffea00;" data-video="videos/amarelo.mp4"></div>
+  <div class="cell color-btn" style="background:#ff8a00;" data-video="videos/laranja.mp4"></div>
+  <div class="cell color-btn" style="background:#a600ff;" data-video="videos/roxo.mp4"></div>
+  <div class="cell color-btn" style="background:#ff00aa;" data-video="videos/rosa.mp4"></div>
+  <div class="cell color-btn" style="background:#8d8d8d;" data-video="videos/cinza.mp4"></div>
+  <div class="cell color-btn" style="background:#000000;" data-video="videos/preto.mp4"></div>
 </section>
-
 <br><br><br>
 <footer>
   Contatos: <br><br>
@@ -466,7 +434,6 @@ footer {
   <br><br>
   © 2025 Librando | Projeto TCC - ETEC Rosa Perrone Scavone
 </footer>
-<!-- ==== AGORA O SCRIPT ESTÁ NO FINAL ==== -->
 <script>
 document.querySelectorAll(".img-btn").forEach(cell => {
   cell.addEventListener("click", () => {
@@ -478,41 +445,32 @@ document.querySelectorAll(".img-btn").forEach(cell => {
 document.getElementById("closeModal").addEventListener("click", () => {
   document.getElementById("imgModal").style.display = "none";
 });
-// ==== MODAL DE VÍDEO ====
 document.querySelectorAll(".video-btn").forEach(cell => {
   cell.addEventListener("click", () => {
     const videoPath = cell.getAttribute("data-video");
     const modalVideo = document.getElementById("modalVideo");
-
     modalVideo.src = videoPath;
     modalVideo.load();
     modalVideo.play();
-
     document.getElementById("videoModal").style.display = "flex";
   });
 });
-
 document.getElementById("closeVideoModal").addEventListener("click", () => {
   const modalVideo = document.getElementById("modalVideo");
   modalVideo.pause();
   modalVideo.src = "";
   document.getElementById("videoModal").style.display = "none";
 });
-
-// === TABELA DE CORES ABRIR VÍDEO ====
 document.querySelectorAll(".color-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     const videoPath = btn.getAttribute("data-video");
     const modalVideo = document.getElementById("modalVideo");
-
     modalVideo.src = videoPath;
     modalVideo.load();
     modalVideo.play();
-
     document.getElementById("videoModal").style.display = "flex";
   });
 });
-
 </script>
 </body>
 </html>
